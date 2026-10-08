@@ -1,3 +1,5 @@
+![Portada del proyecto](docs/images/hero-render.png)
+
 # ECHO Forest Scatter
 
 **Procedural environment art and forest scattering system built with Blender Geometry Nodes.**
