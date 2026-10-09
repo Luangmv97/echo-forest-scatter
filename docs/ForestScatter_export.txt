@@ -1,0 +1,857 @@
+BLENDER GEOMETRY NODES EXPORT
+================================================================================
+Blender Version : 5.2.2 LTS
+Node Group      : ECHO Forest Scatter
+Nodes           : 42
+Links           : 65
+Exported        : 2026-10-05T17:42:43
+
+================================================================================
+GROUP INTERFACE
+================================================================================
+
+[OUTPUT] Geometry
+  identifier : Socket_1
+  type       : NodeSocketGeometry
+
+[OUTPUT] Mesh
+  identifier : Socket_2
+  type       : NodeSocketGeometry
+
+[INPUT] Terrain
+  identifier : Socket_0
+  type       : NodeSocketGeometry
+
+[INPUT] Seed
+  identifier : Socket_6
+  type       : NodeSocketInt
+  default    : 0
+  min        : 0
+  max        : 2147483647
+  subtype    : NONE
+
+[PANEL] Forest Source
+
+[INPUT] Tree Collection
+  identifier : Socket_10
+  type       : NodeSocketCollection
+  default    : None
+
+[PANEL] Forest Distribution
+
+[INPUT] Density
+  identifier : Socket_8
+  type       : NodeSocketFloat
+  default    : 0.10000000149011612
+  min        : 0.0
+  max        : 10.0
+  subtype    : NONE
+
+[INPUT] Density Mask
+  identifier : Socket_15
+  type       : NodeSocketFloat
+  default    : 1.0
+  min        : 0.0
+  max        : 1.0
+  subtype    : FACTOR
+
+[INPUT] Minimum Spacing
+  identifier : Socket_16
+  type       : NodeSocketFloat
+  default    : 2.0
+  min        : 0.10000000149011612
+  max        : 20.0
+  subtype    : DISTANCE
+
+[INPUT] Ground Embed
+  identifier : Socket_11
+  type       : NodeSocketFloat
+  default    : 0.10000000149011612
+  min        : 0.0
+  max        : 2.0
+  subtype    : DISTANCE
+
+[INPUT] Terrain Alignment
+  identifier : Socket_12
+  type       : NodeSocketFloat
+  default    : 0.20000000298023224
+  min        : 0.0
+  max        : 1.0
+  subtype    : FACTOR
+
+[INPUT] Max Slope
+  identifier : Socket_13
+  type       : NodeSocketFloat
+  default    : 0.7853981852531433
+  min        : 0.0
+  max        : 90.0
+  subtype    : ANGLE
+
+[INPUT] Scale Variation
+  identifier : Socket_14
+  type       : NodeSocketFloat
+  default    : 0.15000000596046448
+  min        : 0.0
+  max        : 1.0
+  subtype    : FACTOR
+
+[PANEL] Forest Boundary
+
+[INPUT] Use Boundary
+  identifier : Socket_18
+  type       : NodeSocketBool
+  default    : False
+
+[INPUT] Boundary Object
+  identifier : Socket_19
+  type       : NodeSocketObject
+  default    : None
+
+================================================================================
+NODES
+================================================================================
+
+[001] Group Input
+  Label      : ''
+  Type       : NodeGroupInput
+  Location   : (-629.9, -227.9)
+  Inputs:
+  Outputs:
+    [00] Terrain [Socket_0]  <LINKED>
+    [01] Seed [Socket_6]  <LINKED>
+    [02] Tree Collection [Socket_10]  <LINKED>
+    [03] Density [Socket_8]  <LINKED>
+    [04] Density Mask [Socket_15]  <LINKED>
+    [05] Minimum Spacing [Socket_16]  <LINKED>
+    [06] Ground Embed [Socket_11]  <LINKED>
+    [07] Terrain Alignment [Socket_12]  <LINKED>
+    [08] Max Slope [Socket_13]  <LINKED>
+    [09] Scale Variation [Socket_14]  <LINKED>
+    [10] Use Boundary [Socket_18]  <LINKED>
+    [11] Boundary Object [Socket_19]  <LINKED>
+    [12]  [__extend__]
+
+[002] Math.008
+  Label      : 'Masked Forest Density'
+  Type       : ShaderNodeMath
+  Location   : (-284.7, -213.4)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[003] Named Attribute
+  Label      : 'Painted Forest Density'
+  Type       : GeometryNodeInputNamedAttribute
+  Location   : (-280.1, -80.3)
+  Properties:
+    data_type: 'FLOAT'
+  Inputs:
+    [00] Name = 'ECHO_Forest_Density'
+  Outputs:
+    [00] Attribute  <LINKED>
+    [01] Exists
+
+[004] Object Info
+  Label      : 'Forest Boundary Object'
+  Type       : GeometryNodeObjectInfo
+  Location   : (-205.2, 226.4)
+  Inputs:
+    [00] Object = None  <LINKED>
+    [01] As Instance = False
+  Outputs:
+    [00] Transform  <LINKED>
+    [01] Location
+    [02] Rotation
+    [03] Scale
+    [04] Geometry  <LINKED>
+
+[005] Math.009
+  Label      : 'Final Forest Density'
+  Type       : ShaderNodeMath
+  Location   : (-77.6, -219.9)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[006] Fill Curve
+  Label      : 'Forest Boundary Area'
+  Type       : GeometryNodeFillCurve
+  Location   : (-5.1, 173.9)
+  Inputs:
+    [00] Curve  <LINKED>
+    [01] Group ID = 0
+    [02] Mode = 'N-gons'
+    [03] Fill Rule = 'Even-Odd'
+  Outputs:
+    [00] Mesh  <LINKED>
+
+[007] Distribute Points on Faces.001
+  Label      : ''
+  Type       : GeometryNodeDistributePointsOnFaces
+  Location   : (127.7, -158.2)
+  Inputs:
+    [00] Mesh  <LINKED>
+    [01] Selection = True
+    [02] Distance Min = 0.0  <LINKED>
+    [03] Density Max = 1.0
+    [04] Density = 0.012000000104308128
+    [05] Density Factor = 1.0  <LINKED>
+    [06] Seed = 50  <LINKED>
+  Outputs:
+    [00] Points  <LINKED>
+    [01] Normal  <LINKED>
+    [02] Rotation
+
+[008] Collection Info
+  Label      : 'Tree Variants'
+  Type       : GeometryNodeCollectionInfo
+  Location   : (182.1, -467.5)
+  Inputs:
+    [00] Collection = None  <LINKED>
+    [01] Separate Children = True
+    [02] Reset Children = False
+  Outputs:
+    [00] Instances  <LINKED>
+
+[009] Math.007
+  Label      : 'Maximum Tree Scale'
+  Type       : ShaderNodeMath
+  Location   : (186.7, -818.4)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 1.0
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[010] Math.006
+  Label      : 'Minimum Tree Scale'
+  Type       : ShaderNodeMath
+  Location   : (189.0, -651.1)
+  Properties:
+    operation: 'SUBTRACT'
+  Inputs:
+    [00] Value = 1.0
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[011] Transform Geometry.001
+  Label      : 'Apply Boundary Object Transform'
+  Type       : GeometryNodeTransform
+  Location   : (193.4, 296.0)
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Mode = 'Matrix'
+    [02] Translation = (0.0, 0.0, 0.0)
+    [03] Rotation = Euler((0.0, 0.0, 0.0), 'XYZ')
+    [04] Scale = (1.0, 1.0, 1.0)
+    [05] Transform  <LINKED>
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[012] Position
+  Label      : ''
+  Type       : GeometryNodeInputPosition
+  Location   : (211.9, 117.5)
+  Inputs:
+  Outputs:
+    [00] Position  <LINKED>
+
+[013] Math.001
+  Label      : 'Rotation Seed Offset'
+  Type       : ShaderNodeMath
+  Location   : (243.9, 30.7)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 200.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[014] Math.004
+  Label      : 'Ground Embed Direction'
+  Type       : ShaderNodeMath
+  Location   : (328.0, -314.9)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = -1.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[015] Domain Size
+  Label      : 'Tree Variant Count'
+  Type       : GeometryNodeAttributeDomainSize
+  Location   : (387.1, -527.2)
+  Inputs:
+    [00] Geometry  <LINKED>
+  Outputs:
+    [00] Point Count
+    [01] Edge Count
+    [02] Face Count
+    [03] Face Corner Count
+    [04] Spline Count
+    [05] Instance Count  <LINKED>
+    [06] Layer Count
+
+[016] Vector Math.004
+  Label      : 'Flatten Sample Position'
+  Type       : ShaderNodeVectorMath
+  Location   : (397.3, 240.9)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Vector = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Vector Math.004"].inputs[0].default_value  <LINKED>
+    [01] Vector [Vector_001] = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Vector Math.004"].inputs[1].default_value
+    [02] Vector [Vector_002] = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Vector Math.004"].inputs[2].default_value
+    [03] Scale = 1.0
+  Outputs:
+    [00] Vector  <LINKED>
+    [01] Value
+
+[017] Transform Geometry
+  Label      : 'Flatten Forest Boundary'
+  Type       : GeometryNodeTransform
+  Location   : (402.1, 393.9)
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Mode = 'Components'
+    [02] Translation = (0.0, 0.0, 0.0)
+    [03] Rotation = Euler((0.0, 0.0, 0.0), 'XYZ')
+    [04] Scale = (1.0, 1.0, 0.0)
+    [05] Transform
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[018] Mix
+  Label      : 'Terrain Alignment Vector'
+  Type       : ShaderNodeMix
+  Location   : (433.0, -8.3)
+  Properties:
+    data_type: 'VECTOR'
+  Inputs:
+    [00] Factor [Factor_Float] = 1.0  <LINKED>
+    [01] Factor [Factor_Vector] = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Mix"].inputs[1].default_value
+    [02] A [A_Float] = 0.0
+    [03] B [B_Float] = 0.0
+    [04] A [A_Vector] = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Mix"].inputs[4].default_value
+    [05] B [B_Vector] = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Mix"].inputs[5].default_value  <LINKED>
+    [06] A [A_Color] = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Mix"].inputs[6].default_value
+    [07] B [B_Color] = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Mix"].inputs[7].default_value
+    [08] A [A_Rotation] = Euler((0.0, 0.0, 0.0), 'XYZ')
+    [09] B [B_Rotation] = Euler((0.0, 0.0, 0.0), 'XYZ')
+  Outputs:
+    [00] Result [Result_Float]
+    [01] Result [Result_Vector]  <LINKED>
+    [02] Result [Result_Color]
+    [03] Result [Result_Rotation]
+
+[019] Vector Math
+  Label      : 'Ground Embed Offset'
+  Type       : ShaderNodeVectorMath
+  Location   : (545.9, -338.6)
+  Properties:
+    operation: 'SCALE'
+  Inputs:
+    [00] Vector = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Vector Math"].inputs[0].default_value  <LINKED>
+    [01] Vector [Vector_001] = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Vector Math"].inputs[1].default_value
+    [02] Vector [Vector_002] = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Vector Math"].inputs[2].default_value
+    [03] Scale = 1.0  <LINKED>
+  Outputs:
+    [00] Vector  <LINKED>
+    [01] Value
+
+[020] Math.002
+  Label      : 'Scale Seed Offset'
+  Type       : ShaderNodeMath
+  Location   : (576.3, -806.0)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 300.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[021] Math
+  Label      : 'Variant Seed Offset'
+  Type       : ShaderNodeMath
+  Location   : (578.8, -647.3)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 100.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[022] Math.003
+  Label      : 'Tree Variant Max Index'
+  Type       : ShaderNodeMath
+  Location   : (580.7, -490.4)
+  Properties:
+    operation: 'SUBTRACT'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[023] Random Value.002
+  Label      : 'Random Tree Rotation'
+  Type       : FunctionNodeRandomValue
+  Location   : (623.9, 10.1)
+  Properties:
+    data_type: 'FLOAT'
+  Inputs:
+    [00] Min = -3.141592025756836
+    [01] Max = 3.141592025756836
+    [02] ID = 0
+    [03] Seed = 52  <LINKED>
+  Outputs:
+    [00] Value  <LINKED>
+
+[024] Math.005
+  Label      : 'Max Slope Cosine'
+  Type       : ShaderNodeMath
+  Location   : (625.2, 145.4)
+  Properties:
+    operation: 'COSINE'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.5
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[025] Vector Math.002
+  Label      : 'Terrain Up Dot'
+  Type       : ShaderNodeVectorMath
+  Location   : (626.3, 337.6)
+  Properties:
+    operation: 'DOT_PRODUCT'
+  Inputs:
+    [00] Vector = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Vector Math.002"].inputs[0].default_value  <LINKED>
+    [01] Vector [Vector_001] = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Vector Math.002"].inputs[1].default_value
+    [02] Vector [Vector_002] = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Vector Math.002"].inputs[2].default_value
+    [03] Scale = 1.0
+  Outputs:
+    [00] Vector
+    [01] Value  <LINKED>
+
+[026] Vector Math.001
+  Label      : 'Normalized Tree Up'
+  Type       : ShaderNodeVectorMath
+  Location   : (631.1, -185.1)
+  Properties:
+    operation: 'NORMALIZE'
+  Inputs:
+    [00] Vector = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Vector Math.001"].inputs[0].default_value  <LINKED>
+    [01] Vector [Vector_001] = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Vector Math.001"].inputs[1].default_value
+    [02] Vector [Vector_002] = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Vector Math.001"].inputs[2].default_value
+    [03] Scale = 1.0
+  Outputs:
+    [00] Vector  <LINKED>
+    [01] Value
+
+[027] Geometry Proximity
+  Label      : 'Distance to Forest Boundary'
+  Type       : GeometryNodeProximity
+  Location   : (638.8, 566.0)
+  Inputs:
+    [00] Geometry [Target]  <LINKED>
+    [01] Group ID = 0
+    [02] Sample Position [Source Position] = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Geometry Proximity"].inputs[2].default_value  <LINKED>
+    [03] Sample Group ID = 0
+  Outputs:
+    [00] Position
+    [01] Distance  <LINKED>
+    [02] Is Valid
+
+[028] Set Position
+  Label      : 'Embed Forest Points'
+  Type       : GeometryNodeSetPosition
+  Location   : (783.7, -317.5)
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Selection = True
+    [02] Position = bpy.data.node_groups['ECHO Forest Scatter'].nodes["Set Position"].inputs[2].default_value
+    [03] Offset = (0.0, 0.0, 0.0)  <LINKED>
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[029] Random Value.001
+  Label      : 'Random Tree Variant'
+  Type       : FunctionNodeRandomValue
+  Location   : (784.7, -549.0)
+  Properties:
+    data_type: 'INT'
+  Inputs:
+    [00] Min = 0
+    [01] Max = 3  <LINKED>
+    [02] ID = 0
+    [03] Seed = 3  <LINKED>
+  Outputs:
+    [00] Value  <LINKED>
+
+[030] Combine XYZ.001
+  Label      : 'Tree Radial Rotation'
+  Type       : ShaderNodeCombineXYZ
+  Location   : (794.4, 31.1)
+  Inputs:
+    [00] X = 0.0
+    [01] Y = 0.0
+    [02] Z = 0.0  <LINKED>
+  Outputs:
+    [00] Vector  <LINKED>
+
+[031] Align Rotation to Vector
+  Label      : 'Align Tree to Terrain'
+  Type       : FunctionNodeAlignRotationToVector
+  Location   : (798.2, -107.2)
+  Inputs:
+    [00] Rotation = Euler((0.0, 0.0, 0.0), 'XYZ')
+    [01] Factor = 1.0
+    [02] Vector = (0.0, 0.0, 1.0)  <LINKED>
+  Outputs:
+    [00] Rotation  <LINKED>
+
+[032] Compare.001
+  Label      : 'Inside Forest Boundary'
+  Type       : FunctionNodeCompare
+  Location   : (833.5, 420.1)
+  Properties:
+    operation: 'LESS_EQUAL'
+    data_type: 'FLOAT'
+    mode: 'ELEMENT'
+  Inputs:
+    [00] A = 0.0  <LINKED>
+    [01] B = 0.0010000000474974513
+  Outputs:
+    [00] Result  <LINKED>
+
+[033] Compare
+  Label      : 'Slope Allowed'
+  Type       : FunctionNodeCompare
+  Location   : (869.1, 229.5)
+  Properties:
+    operation: 'GREATER_EQUAL'
+    data_type: 'FLOAT'
+    mode: 'ELEMENT'
+  Inputs:
+    [00] A = 0.0  <LINKED>
+    [01] B = 0.0  <LINKED>
+  Outputs:
+    [00] Result  <LINKED>
+
+[034] Random Value
+  Label      : 'Random Tree Scale'
+  Type       : FunctionNodeRandomValue
+  Location   : (950.1, -684.7)
+  Properties:
+    data_type: 'FLOAT'
+  Inputs:
+    [00] Min = 0.8500000238418579  <LINKED>
+    [01] Max = 1.149999976158142  <LINKED>
+    [02] ID = 0
+    [03] Seed = 0  <LINKED>
+  Outputs:
+    [00] Value  <LINKED>
+
+[035] Rotate Rotation
+  Label      : 'Final Tree Rotation'
+  Type       : FunctionNodeRotateRotation
+  Location   : (1016.4, -114.6)
+  Inputs:
+    [00] Rotation = Euler((0.0, 0.0, 0.0), 'XYZ')  <LINKED>
+    [01] Rotate By = Euler((0.0, 0.0, 0.0), 'XYZ')  <LINKED>
+  Outputs:
+    [00] Rotation  <LINKED>
+
+[036] Switch
+  Label      : 'Boundary Selection'
+  Type       : GeometryNodeSwitch
+  Location   : (1060.6, 328.1)
+  Properties:
+    input_type: 'BOOLEAN'
+  Inputs:
+    [00] Switch = False  <LINKED>
+    [01] False = True
+    [02] True = False  <LINKED>
+  Outputs:
+    [00] Output  <LINKED>
+
+[037] Combine XYZ
+  Label      : 'Uniform Tree Scale'
+  Type       : ShaderNodeCombineXYZ
+  Location   : (1191.2, -619.4)
+  Inputs:
+    [00] X = 0.0  <LINKED>
+    [01] Y = 0.0  <LINKED>
+    [02] Z = 0.0  <LINKED>
+  Outputs:
+    [00] Vector  <LINKED>
+
+[038] Store Named Attribute
+  Label      : 'Store Tree Variant'
+  Type       : GeometryNodeStoreNamedAttribute
+  Location   : (1192.5, -288.7)
+  Properties:
+    data_type: 'INT'
+    domain: 'POINT'
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Selection = True
+    [02] Name = 'echo_tree_variant'
+    [03] Value = 0  <LINKED>
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[039] Boolean Math
+  Label      : 'Forest Placement Allowed'
+  Type       : FunctionNodeBooleanMath
+  Location   : (1240.1, 142.1)
+  Properties:
+    operation: 'AND'
+  Inputs:
+    [00] Boolean = False  <LINKED>
+    [01] Boolean [Boolean_001] = False  <LINKED>
+  Outputs:
+    [00] Boolean  <LINKED>
+
+[040] Instance on Points.001
+  Label      : ''
+  Type       : GeometryNodeInstanceOnPoints
+  Location   : (1752.3, -164.2)
+  Inputs:
+    [00] Points  <LINKED>
+    [01] Selection = True  <LINKED>
+    [02] Instance  <LINKED>
+    [03] Pick Instance = True
+    [04] Instance Index = 0  <LINKED>
+    [05] Rotation = Euler((0.0, 0.0, 0.0), 'XYZ')  <LINKED>
+    [06] Scale = (1.0, 1.0, 1.0)  <LINKED>
+  Outputs:
+    [00] Instances  <LINKED>
+
+[041] Join Geometry.001
+  Label      : ''
+  Type       : GeometryNodeJoinGeometry
+  Location   : (2038.0, -70.8)
+  Inputs:
+    [00] Geometry  <LINKED>
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[042] Group Output
+  Label      : ''
+  Type       : NodeGroupOutput
+  Location   : (2319.5, -265.6)
+  Inputs:
+    [00] Geometry [Socket_1]  <LINKED>
+    [01] Mesh [Socket_2]
+    [02]  [__extend__]
+  Outputs:
+
+================================================================================
+LINKS
+================================================================================
+Total links: 65
+
+[001] Instance on Points.001.Instances [OUT 0]
+      -> Join Geometry.001.Geometry [IN 0]
+[002] Group Input.Terrain [Socket_0] [OUT 0]
+      -> Distribute Points on Faces.001.Mesh [IN 0]
+[003] Group Input.Terrain [Socket_0] [OUT 0]
+      -> Join Geometry.001.Geometry [IN 0]
+[004] Group Input.Seed [Socket_6] [OUT 1]
+      -> Distribute Points on Faces.001.Seed [IN 6]
+[005] Group Input.Tree Collection [Socket_10] [OUT 2]
+      -> Collection Info.Collection [IN 0]
+[006] Collection Info.Instances [OUT 0]
+      -> Instance on Points.001.Instance [IN 2]
+[007] Math.001.Value [OUT 0]
+      -> Random Value.002.Seed [IN 3]
+[008] Random Value.Value [OUT 0]
+      -> Combine XYZ.X [IN 0]
+[009] Random Value.Value [OUT 0]
+      -> Combine XYZ.Y [IN 1]
+[010] Random Value.Value [OUT 0]
+      -> Combine XYZ.Z [IN 2]
+[011] Combine XYZ.Vector [OUT 0]
+      -> Instance on Points.001.Scale [IN 6]
+[012] Group Input.Seed [Socket_6] [OUT 1]
+      -> Math.Value [IN 0]
+[013] Math.Value [OUT 0]
+      -> Random Value.001.Seed [IN 3]
+[014] Group Input.Seed [Socket_6] [OUT 1]
+      -> Math.001.Value [IN 0]
+[015] Math.002.Value [OUT 0]
+      -> Random Value.Seed [IN 3]
+[016] Group Input.Seed [Socket_6] [OUT 1]
+      -> Math.002.Value [IN 0]
+[017] Random Value.001.Value [OUT 0]
+      -> Instance on Points.001.Instance Index [IN 4]
+[018] Collection Info.Instances [OUT 0]
+      -> Domain Size.Geometry [IN 0]
+[019] Domain Size.Instance Count [OUT 5]
+      -> Math.003.Value [IN 0]
+[020] Math.003.Value [OUT 0]
+      -> Random Value.001.Max [IN 1]
+[021] Distribute Points on Faces.001.Normal [OUT 1]
+      -> Vector Math.Vector [IN 0]
+[022] Group Input.Ground Embed [Socket_11] [OUT 6]
+      -> Math.004.Value [IN 0]
+[023] Math.004.Value [OUT 0]
+      -> Vector Math.Scale [IN 3]
+[024] Distribute Points on Faces.001.Points [OUT 0]
+      -> Set Position.Geometry [IN 0]
+[025] Vector Math.Vector [OUT 0]
+      -> Set Position.Offset [IN 3]
+[026] Group Input.Terrain Alignment [Socket_12] [OUT 7]
+      -> Mix.Factor [Factor_Float] [IN 0]
+[027] Distribute Points on Faces.001.Normal [OUT 1]
+      -> Mix.B [B_Vector] [IN 5]
+[028] Mix.Result [Result_Vector] [OUT 1]
+      -> Vector Math.001.Vector [IN 0]
+[029] Vector Math.001.Vector [OUT 0]
+      -> Align Rotation to Vector.Vector [IN 2]
+[030] Random Value.002.Value [OUT 0]
+      -> Combine XYZ.001.Z [IN 2]
+[031] Rotate Rotation.Rotation [OUT 0]
+      -> Instance on Points.001.Rotation [IN 5]
+[032] Combine XYZ.001.Vector [OUT 0]
+      -> Rotate Rotation.Rotation [IN 0]
+[033] Align Rotation to Vector.Rotation [OUT 0]
+      -> Rotate Rotation.Rotate By [IN 1]
+[034] Distribute Points on Faces.001.Normal [OUT 1]
+      -> Vector Math.002.Vector [IN 0]
+[035] Group Input.Max Slope [Socket_13] [OUT 8]
+      -> Math.005.Value [IN 0]
+[036] Vector Math.002.Value [OUT 1]
+      -> Compare.A [IN 0]
+[037] Math.005.Value [OUT 0]
+      -> Compare.B [IN 1]
+[038] Group Input.Scale Variation [Socket_14] [OUT 9]
+      -> Math.006.Value [Value_001] [IN 1]
+[039] Group Input.Scale Variation [Socket_14] [OUT 9]
+      -> Math.007.Value [Value_001] [IN 1]
+[040] Math.006.Value [OUT 0]
+      -> Random Value.Min [IN 0]
+[041] Math.007.Value [OUT 0]
+      -> Random Value.Max [IN 1]
+[042] Group Input.Density [Socket_8] [OUT 3]
+      -> Math.008.Value [IN 0]
+[043] Group Input.Density Mask [Socket_15] [OUT 4]
+      -> Math.008.Value [Value_001] [IN 1]
+[044] Math.008.Value [OUT 0]
+      -> Math.009.Value [Value_001] [IN 1]
+[045] Named Attribute.Attribute [OUT 0]
+      -> Math.009.Value [IN 0]
+[046] Math.009.Value [OUT 0]
+      -> Distribute Points on Faces.001.Density Factor [IN 5]
+[047] Group Input.Boundary Object [Socket_19] [OUT 11]
+      -> Object Info.Object [IN 0]
+[048] Object Info.Geometry [OUT 4]
+      -> Fill Curve.Curve [IN 0]
+[049] Geometry Proximity.Distance [OUT 1]
+      -> Compare.001.A [IN 0]
+[050] Group Input.Use Boundary [Socket_18] [OUT 10]
+      -> Switch.Switch [IN 0]
+[051] Compare.001.Result [OUT 0]
+      -> Switch.True [IN 2]
+[052] Compare.Result [OUT 0]
+      -> Boolean Math.Boolean [Boolean_001] [IN 1]
+[053] Switch.Output [OUT 0]
+      -> Boolean Math.Boolean [IN 0]
+[054] Boolean Math.Boolean [OUT 0]
+      -> Instance on Points.001.Selection [IN 1]
+[055] Position.Position [OUT 0]
+      -> Vector Math.004.Vector [IN 0]
+[056] Vector Math.004.Vector [OUT 0]
+      -> Geometry Proximity.Sample Position [Source Position] [IN 2]
+[057] Transform Geometry.Geometry [OUT 0]
+      -> Geometry Proximity.Geometry [Target] [IN 0]
+[058] Fill Curve.Mesh [OUT 0]
+      -> Transform Geometry.001.Geometry [IN 0]
+[059] Object Info.Transform [OUT 0]
+      -> Transform Geometry.001.Transform [IN 5]
+[060] Transform Geometry.001.Geometry [OUT 0]
+      -> Transform Geometry.Geometry [IN 0]
+[061] Set Position.Geometry [OUT 0]
+      -> Store Named Attribute.Geometry [IN 0]
+[062] Random Value.001.Value [OUT 0]
+      -> Store Named Attribute.Value [IN 3]
+[063] Group Input.Minimum Spacing [Socket_16] [OUT 5]
+      -> Distribute Points on Faces.001.Distance Min [IN 2]
+[064] Join Geometry.001.Geometry [OUT 0]
+      -> Group Output.Geometry [Socket_1] [IN 0]
+[065] Store Named Attribute.Geometry [OUT 0]
+      -> Instance on Points.001.Points [IN 0]
+
+================================================================================
+NODE ORGANIZATION
+================================================================================
+Group Input | parent=None | location=(-629.9, -227.9)
+Group Output | parent=None | location=(2319.5, -265.6)
+Instance on Points.001 | parent=None | location=(1752.3, -164.2)
+Random Value.001 | parent=None | location=(784.7, -549.0)
+Random Value.002 | parent=None | location=(623.9, 10.1)
+Distribute Points on Faces.001 | parent=None | location=(127.7, -158.2)
+Join Geometry.001 | parent=None | location=(2038.0, -70.8)
+Collection Info | parent=None | location=(182.1, -467.5)
+Random Value | parent=None | location=(950.1, -684.7)
+Combine XYZ | parent=None | location=(1191.2, -619.4)
+Math | parent=None | location=(578.8, -647.3)
+Math.001 | parent=None | location=(243.9, 30.7)
+Math.002 | parent=None | location=(576.3, -806.0)
+Domain Size | parent=None | location=(387.1, -527.2)
+Math.003 | parent=None | location=(580.7, -490.4)
+Vector Math | parent=None | location=(545.9, -338.6)
+Math.004 | parent=None | location=(328.0, -314.9)
+Set Position | parent=None | location=(783.7, -317.5)
+Mix | parent=None | location=(433.0, -8.3)
+Vector Math.001 | parent=None | location=(631.1, -185.1)
+Align Rotation to Vector | parent=None | location=(798.2, -107.2)
+Combine XYZ.001 | parent=None | location=(794.4, 31.1)
+Rotate Rotation | parent=None | location=(1016.4, -114.6)
+Vector Math.002 | parent=None | location=(626.3, 337.6)
+Math.005 | parent=None | location=(625.2, 145.4)
+Compare | parent=None | location=(869.1, 229.5)
+Math.006 | parent=None | location=(189.0, -651.1)
+Math.007 | parent=None | location=(186.7, -818.4)
+Math.008 | parent=None | location=(-284.7, -213.4)
+Named Attribute | parent=None | location=(-280.1, -80.3)
+Math.009 | parent=None | location=(-77.6, -219.9)
+Object Info | parent=None | location=(-205.2, 226.4)
+Fill Curve | parent=None | location=(-5.1, 173.9)
+Geometry Proximity | parent=None | location=(638.8, 566.0)
+Compare.001 | parent=None | location=(833.5, 420.1)
+Switch | parent=None | location=(1060.6, 328.1)
+Boolean Math | parent=None | location=(1240.1, 142.1)
+Transform Geometry | parent=None | location=(402.1, 393.9)
+Vector Math.004 | parent=None | location=(397.3, 240.9)
+Position | parent=None | location=(211.9, 117.5)
+Transform Geometry.001 | parent=None | location=(193.4, 296.0)
+Store Named Attribute | parent=None | location=(1192.5, -288.7)

@@ -1,0 +1,3567 @@
+BLENDER GEOMETRY NODES EXPORT
+================================================================================
+Blender Version : 5.2.2 LTS
+Node Group      : TreeBase
+Nodes           : 162
+Links           : 350
+Exported        : 2026-10-06T09:27:06
+
+================================================================================
+GROUP INTERFACE
+================================================================================
+
+[OUTPUT] Geometry
+  identifier : Socket_1
+  type       : NodeSocketGeometry
+
+[INPUT] Geometry
+  identifier : Socket_0
+  type       : NodeSocketGeometry
+
+[INPUT] Seed
+  identifier : Socket_4
+  type       : NodeSocketInt
+  default    : 0
+  min        : 0
+  max        : 2147483647
+  subtype    : NONE
+
+[INPUT] Preview Mode
+  identifier : Socket_70
+  type       : NodeSocketBool
+  default    : False
+
+[INPUT] Opposite Leaves
+  identifier : Socket_57
+  type       : NodeSocketBool
+  default    : False
+
+[PANEL] Tree Structure
+
+[INPUT] Segments Count
+  identifier : Socket_3
+  type       : NodeSocketInt
+  default    : 5
+  min        : 1
+  max        : 100000
+  subtype    : NONE
+
+[INPUT] Radius
+  identifier : Socket_2
+  type       : NodeSocketFloat
+  default    : 0.30000001192092896
+  min        : 0.0
+  max        : 3.4028234663852886e+38
+  subtype    : DISTANCE
+
+[INPUT] Wood Material
+  identifier : Socket_69
+  type       : NodeSocketMaterial
+  default    : None
+
+[PANEL] Trunk Base
+
+[INPUT] Base Flare
+  identifier : Socket_46
+  type       : NodeSocketFloat
+  default    : 0.30000001192092896
+  min        : 0.0
+  max        : 1.0
+  subtype    : NONE
+
+[INPUT] Base Flare Height
+  identifier : Socket_47
+  type       : NodeSocketFloat
+  default    : 0.15000000596046448
+  min        : 0.009999999776482582
+  max        : 0.25
+  subtype    : NONE
+
+[PANEL] Roots
+
+[INPUT] Roots
+  identifier : Socket_49
+  type       : NodeSocketBool
+  default    : False
+
+[PANEL] Root Settings
+
+[INPUT] Root Count
+  identifier : Socket_51
+  type       : NodeSocketInt
+  default    : 5
+  min        : 1
+  max        : 12
+  subtype    : NONE
+
+[INPUT] Root Length
+  identifier : Socket_52
+  type       : NodeSocketFloat
+  default    : 2.5
+  min        : 0.10000000149011612
+  max        : 10.0
+  subtype    : DISTANCE
+
+[INPUT] Root Depth
+  identifier : Socket_53
+  type       : NodeSocketFloat
+  default    : 0.5
+  min        : 0.0
+  max        : 3.0
+  subtype    : DISTANCE
+
+[INPUT] Root Spread Randomness
+  identifier : Socket_54
+  type       : NodeSocketFloat
+  default    : 0.2617993950843811
+  min        : 0.0
+  max        : 45.0
+  subtype    : ANGLE
+
+[INPUT] Root Length Randomness
+  identifier : Socket_55
+  type       : NodeSocketFloat
+  default    : 0.25
+  min        : 0.0
+  max        : 0.75
+  subtype    : NONE
+
+[INPUT] Root Curvature
+  identifier : Socket_56
+  type       : NodeSocketFloat
+  default    : 0.20000000298023224
+  min        : 0.0
+  max        : 1.0
+  subtype    : NONE
+
+[PANEL] Branches
+
+[INPUT] Branch Levels
+  identifier : Socket_32
+  type       : NodeSocketInt
+  default    : 2
+  min        : 0
+  max        : 4
+  subtype    : NONE
+
+[INPUT] Branch Spawn Count
+  identifier : Socket_29
+  type       : NodeSocketInt
+  default    : 3
+  min        : 0
+  max        : 6
+  subtype    : NONE
+
+[INPUT] Branch Start
+  identifier : Socket_9
+  type       : NodeSocketFloat
+  default    : 0.20000000298023224
+  min        : 0.0
+  max        : 1.0
+  subtype    : NONE
+
+[INPUT] Branch End
+  identifier : Socket_10
+  type       : NodeSocketFloat
+  default    : 0.8999999761581421
+  min        : 0.0
+  max        : 1.0
+  subtype    : NONE
+
+[INPUT] Branch Angle
+  identifier : Socket_6
+  type       : NodeSocketFloat
+  default    : 0.7853981852531433
+  min        : -3.4028234663852886e+38
+  max        : 3.4028234663852886e+38
+  subtype    : ANGLE
+
+[INPUT] Branch Length
+  identifier : Socket_7
+  type       : NodeSocketFloat
+  default    : 2.0
+  min        : 0.0
+  max        : 3.4028234663852886e+38
+  subtype    : NONE
+
+[PANEL] Branch Naturalism
+
+[INPUT] Branch Density
+  identifier : Socket_5
+  type       : NodeSocketFloat
+  default    : 0.6000000238418579
+  min        : 0.0
+  max        : 1.0
+  subtype    : NONE
+
+[INPUT] Branch Curvature
+  identifier : Socket_13
+  type       : NodeSocketFloat
+  default    : 0.25
+  min        : 0.0
+  max        : 1.0
+  subtype    : NONE
+
+[INPUT] Branch Lateral Bias
+  identifier : Socket_23
+  type       : NodeSocketFloat
+  default    : 0.0
+  min        : -1.0
+  max        : 1.0
+  subtype    : NONE
+
+[INPUT] Branch Gravity
+  identifier : Socket_24
+  type       : NodeSocketFloat
+  default    : 0.0
+  min        : 0.0
+  max        : 1.0
+  subtype    : NONE
+
+[INPUT] Length Randomness
+  identifier : Socket_8
+  type       : NodeSocketFloat
+  default    : 0.3499999940395355
+  min        : 0.0
+  max        : 1.0
+  subtype    : NONE
+
+[INPUT] Angle Randomness
+  identifier : Socket_11
+  type       : NodeSocketFloat
+  default    : 0.2617993950843811
+  min        : 0.0
+  max        : 45.0
+  subtype    : ANGLE
+
+[PANEL] Branch Advanced
+
+[INPUT] Branch Count Decay
+  identifier : Socket_30
+  type       : NodeSocketFloat
+  default    : 0.6499999761581421
+  min        : 0.0
+  max        : 1.0
+  subtype    : NONE
+
+[INPUT] Branch Length Decay
+  identifier : Socket_31
+  type       : NodeSocketFloat
+  default    : 0.699999988079071
+  min        : 0.0
+  max        : 1.0
+  subtype    : NONE
+
+[INPUT] Branch Radius Ratio
+  identifier : Socket_12
+  type       : NodeSocketFloat
+  default    : 0.699999988079071
+  min        : 0.05000000074505806
+  max        : 0.8999999761581421
+  subtype    : NONE
+
+[INPUT] Branch Radius Ratio Decay
+  identifier : Socket_33
+  type       : NodeSocketFloat
+  default    : 0.8500000238418579
+  min        : 0.0
+  max        : 1.0
+  subtype    : NONE
+
+[INPUT] Branch Angle Evolution
+  identifier : Socket_34
+  type       : NodeSocketFloat
+  default    : 0.0
+  min        : -30.0
+  max        : 30.0
+  subtype    : ANGLE
+
+[INPUT] Branch Start Evolution
+  identifier : Socket_35
+  type       : NodeSocketFloat
+  default    : 0.0
+  min        : -1.0
+  max        : 1.0
+  subtype    : NONE
+
+[INPUT] Branch End Evolution
+  identifier : Socket_36
+  type       : NodeSocketFloat
+  default    : 0.0
+  min        : -1.0
+  max        : 1.0
+  subtype    : NONE
+
+[PANEL] Foliage Naturalism
+
+[INPUT] Foliage Start
+  identifier : Socket_62
+  type       : NodeSocketFloat
+  default    : 0.4000000059604645
+  min        : 0.0
+  max        : 1.0
+  subtype    : FACTOR
+
+[INPUT] Foliage Spacing
+  identifier : Socket_63
+  type       : NodeSocketFloat
+  default    : 0.30000001192092896
+  min        : 0.05000000074505806
+  max        : 2.0
+  subtype    : DISTANCE
+
+[INPUT] Foliage Density
+  identifier : Socket_61
+  type       : NodeSocketFloat
+  default    : 0.699999988079071
+  min        : 0.0
+  max        : 1.0
+  subtype    : FACTOR
+
+[INPUT] Leaf Size
+  identifier : Socket_64
+  type       : NodeSocketFloat
+  default    : 1.0
+  min        : 0.10000000149011612
+  max        : 3.0
+  subtype    : NONE
+
+[INPUT] Leaf Angle Randomness
+  identifier : Socket_58
+  type       : NodeSocketFloat
+  default    : 0.1745329201221466
+  min        : 0.0
+  max        : 30.0
+  subtype    : ANGLE
+
+[INPUT] Leaf Plane Randomness
+  identifier : Socket_60
+  type       : NodeSocketFloat
+  default    : 0.12217304855585098
+  min        : 0.0
+  max        : 20.0
+  subtype    : ANGLE
+
+[PANEL] Foliage Source
+
+[INPUT] Use Custom Leaf
+  identifier : Socket_66
+  type       : NodeSocketBool
+  default    : False
+
+[INPUT] Custom Leaf
+  identifier : Socket_67
+  type       : NodeSocketObject
+  default    : None
+
+[INPUT] Leaf Material
+  identifier : Socket_68
+  type       : NodeSocketMaterial
+  default    : None
+
+[PANEL] Forks
+
+[INPUT] Forks
+  identifier : Socket_44
+  type       : NodeSocketBool
+  default    : False
+
+[PANEL] Fork Settings
+
+[INPUT] Fork Count
+  identifier : Socket_21
+  type       : NodeSocketInt
+  default    : 2
+  min        : 1
+  max        : 6
+  subtype    : NONE
+
+[INPUT] Fork Length
+  identifier : Socket_22
+  type       : NodeSocketFloat
+  default    : 2.0
+  min        : 0.10000000149011612
+  max        : 3.4028234663852886e+38
+  subtype    : DISTANCE
+
+[INPUT] Fork Start
+  identifier : Socket_15
+  type       : NodeSocketFloat
+  default    : 0.44999998807907104
+  min        : 0.0
+  max        : 1.0
+  subtype    : NONE
+
+[INPUT] Fork End
+  identifier : Socket_16
+  type       : NodeSocketFloat
+  default    : 0.800000011920929
+  min        : 0.0
+  max        : 1.0
+  subtype    : NONE
+
+[INPUT] Fork Angle
+  identifier : Socket_17
+  type       : NodeSocketFloat
+  default    : 0.4363323152065277
+  min        : 0.0
+  max        : 60.0
+  subtype    : ANGLE
+
+[INPUT] Fork Radius Ratio
+  identifier : Socket_19
+  type       : NodeSocketFloat
+  default    : 0.75
+  min        : 0.0
+  max        : 0.949999988079071
+  subtype    : NONE
+
+[PANEL] Fork Naturalism
+
+[INPUT] Fork Angle Randomness
+  identifier : Socket_20
+  type       : NodeSocketFloat
+  default    : 0.1745329201221466
+  min        : 0.0
+  max        : 30.0
+  subtype    : ANGLE
+
+[INPUT] Fork Radial Randomness
+  identifier : Socket_26
+  type       : NodeSocketFloat
+  default    : 0.1745329201221466
+  min        : 0.0
+  max        : 45.0
+  subtype    : ANGLE
+
+[INPUT] Fork Length Randomness
+  identifier : Socket_25
+  type       : NodeSocketFloat
+  default    : 0.20000000298023224
+  min        : 0.0
+  max        : 0.75
+  subtype    : NONE
+
+[INPUT] Fork Noise
+  identifier : Socket_27
+  type       : NodeSocketFloat
+  default    : 0.10000000149011612
+  min        : 0.0
+  max        : 1.0
+  subtype    : NONE
+
+[INPUT] Fork Noise Scale
+  identifier : Socket_28
+  type       : NodeSocketFloat
+  default    : 2.0
+  min        : 0.0
+  max        : 10.0
+  subtype    : NONE
+
+================================================================================
+NODES
+================================================================================
+
+[001] Group Input
+  Label      : ''
+  Type       : NodeGroupInput
+  Location   : (-2542.6, -1896.6)
+  Inputs:
+  Outputs:
+    [00] Geometry [Socket_0]  <LINKED>
+    [01] Seed [Socket_4]  <LINKED>
+    [02] Preview Mode [Socket_70]  <LINKED>
+    [03] Opposite Leaves [Socket_57]  <LINKED>
+    [04] Segments Count [Socket_3]  <LINKED>
+    [05] Radius [Socket_2]  <LINKED>
+    [06] Wood Material [Socket_69]  <LINKED>
+    [07] Base Flare [Socket_46]  <LINKED>
+    [08] Base Flare Height [Socket_47]  <LINKED>
+    [09] Roots [Socket_49]  <LINKED>
+    [10] Root Count [Socket_51]  <LINKED>
+    [11] Root Length [Socket_52]  <LINKED>
+    [12] Root Depth [Socket_53]  <LINKED>
+    [13] Root Spread Randomness [Socket_54]  <LINKED>
+    [14] Root Length Randomness [Socket_55]  <LINKED>
+    [15] Root Curvature [Socket_56]  <LINKED>
+    [16] Branch Levels [Socket_32]  <LINKED>
+    [17] Branch Spawn Count [Socket_29]  <LINKED>
+    [18] Branch Start [Socket_9]  <LINKED>
+    [19] Branch End [Socket_10]  <LINKED>
+    [20] Branch Angle [Socket_6]  <LINKED>
+    [21] Branch Length [Socket_7]  <LINKED>
+    [22] Branch Density [Socket_5]  <LINKED>
+    [23] Branch Curvature [Socket_13]  <LINKED>
+    [24] Branch Lateral Bias [Socket_23]  <LINKED>
+    [25] Branch Gravity [Socket_24]  <LINKED>
+    [26] Length Randomness [Socket_8]  <LINKED>
+    [27] Angle Randomness [Socket_11]  <LINKED>
+    [28] Branch Count Decay [Socket_30]  <LINKED>
+    [29] Branch Length Decay [Socket_31]  <LINKED>
+    [30] Branch Radius Ratio [Socket_12]  <LINKED>
+    [31] Branch Radius Ratio Decay [Socket_33]  <LINKED>
+    [32] Branch Angle Evolution [Socket_34]  <LINKED>
+    [33] Branch Start Evolution [Socket_35]  <LINKED>
+    [34] Branch End Evolution [Socket_36]  <LINKED>
+    [35] Foliage Start [Socket_62]  <LINKED>
+    [36] Foliage Spacing [Socket_63]  <LINKED>
+    [37] Foliage Density [Socket_61]  <LINKED>
+    [38] Leaf Size [Socket_64]  <LINKED>
+    [39] Leaf Angle Randomness [Socket_58]  <LINKED>
+    [40] Leaf Plane Randomness [Socket_60]  <LINKED>
+    [41] Use Custom Leaf [Socket_66]  <LINKED>
+    [42] Custom Leaf [Socket_67]  <LINKED>
+    [43] Leaf Material [Socket_68]  <LINKED>
+    [44] Forks [Socket_44]  <LINKED>
+    [45] Fork Count [Socket_21]  <LINKED>
+    [46] Fork Length [Socket_22]  <LINKED>
+    [47] Fork Start [Socket_15]  <LINKED>
+    [48] Fork End [Socket_16]  <LINKED>
+    [49] Fork Angle [Socket_17]  <LINKED>
+    [50] Fork Radius Ratio [Socket_19]  <LINKED>
+    [51] Fork Angle Randomness [Socket_20]  <LINKED>
+    [52] Fork Radial Randomness [Socket_26]  <LINKED>
+    [53] Fork Length Randomness [Socket_25]  <LINKED>
+    [54] Fork Noise [Socket_27]  <LINKED>
+    [55] Fork Noise Scale [Socket_28]  <LINKED>
+    [56]  [__extend__]
+
+[002] Math.015
+  Label      : 'Fork Seed'
+  Type       : ShaderNodeMath
+  Location   : (-1701.9, -848.9)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.0  <LINKED>
+    [01] Value [Value_001] = 400.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[003] Spline Parameter
+  Label      : ''
+  Type       : GeometryNodeSplineParameter
+  Location   : (-1659.9, -1053.8)
+  Inputs:
+  Outputs:
+    [00] Factor  <LINKED>
+    [01] Length
+    [02] Index
+
+[004] Resample Curve
+  Label      : ''
+  Type       : GeometryNodeResampleCurve
+  Location   : (-1638.8, -1212.2)
+  Inputs:
+    [00] Curve  <LINKED>
+    [01] Selection = True
+    [02] Mode = 'Count'
+    [03] Count = 5  <LINKED>
+    [04] Length = 0.10000000149011612
+  Outputs:
+    [00] Curve  <LINKED>
+
+[005] Map Range
+  Label      : 'Base Flare Falloff'
+  Type       : ShaderNodeMapRange
+  Location   : (-1553.2, -1680.8)
+  Properties:
+    data_type: 'FLOAT'
+    clamp: True
+    interpolation_type: 'SMOOTHSTEP'
+  Inputs:
+    [00] Value = 1.0  <LINKED>
+    [01] From Min = 0.0
+    [02] From Max = 1.0  <LINKED>
+    [03] To Min = 1.0
+    [04] To Max = 0.0
+    [05] Steps = 4.0
+    [06] Vector = bpy.data.node_groups['TreeBase'].nodes["Map Range"].inputs[6].default_value
+    [07] From Min [From_Min_FLOAT3] = bpy.data.node_groups['TreeBase'].nodes["Map Range"].inputs[7].default_value
+    [08] From Max [From_Max_FLOAT3] = bpy.data.node_groups['TreeBase'].nodes["Map Range"].inputs[8].default_value
+    [09] To Min [To_Min_FLOAT3] = bpy.data.node_groups['TreeBase'].nodes["Map Range"].inputs[9].default_value
+    [10] To Max [To_Max_FLOAT3] = bpy.data.node_groups['TreeBase'].nodes["Map Range"].inputs[10].default_value
+    [11] Steps [Steps_FLOAT3] = bpy.data.node_groups['TreeBase'].nodes["Map Range"].inputs[11].default_value
+  Outputs:
+    [00] Result  <LINKED>
+    [01] Vector
+
+[006] Math.018
+  Label      : 'Generated Fork Count'
+  Type       : ShaderNodeMath
+  Location   : (-1539.5, -502.0)
+  Properties:
+    operation: 'SUBTRACT'
+  Inputs:
+    [00] Value = 1.0  <LINKED>
+    [01] Value [Value_001] = 1.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[007] Random Value.001
+  Label      : 'Fork Position Random'
+  Type       : FunctionNodeRandomValue
+  Location   : (-1538.7, -668.5)
+  Properties:
+    data_type: 'FLOAT'
+  Inputs:
+    [00] Min = 0.0  <LINKED>
+    [01] Max = 1.0  <LINKED>
+    [02] ID = 0
+    [03] Seed = 0  <LINKED>
+  Outputs:
+    [00] Value  <LINKED>
+
+[008] Math
+  Label      : 'Trunk Point Count - 1'
+  Type       : ShaderNodeMath
+  Location   : (-1538.3, -844.0)
+  Properties:
+    operation: 'SUBTRACT'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[009] Map Range.001
+  Label      : 'Base Flare Falloff at Fork'
+  Type       : ShaderNodeMapRange
+  Location   : (-1529.4, -1449.3)
+  Properties:
+    data_type: 'FLOAT'
+    clamp: True
+    interpolation_type: 'SMOOTHSTEP'
+  Inputs:
+    [00] Value = 1.0  <LINKED>
+    [01] From Min = 0.0
+    [02] From Max = 1.0  <LINKED>
+    [03] To Min = 1.0
+    [04] To Max = 0.0
+    [05] Steps = 4.0
+    [06] Vector = bpy.data.node_groups['TreeBase'].nodes["Map Range.001"].inputs[6].default_value
+    [07] From Min [From_Min_FLOAT3] = bpy.data.node_groups['TreeBase'].nodes["Map Range.001"].inputs[7].default_value
+    [08] From Max [From_Max_FLOAT3] = bpy.data.node_groups['TreeBase'].nodes["Map Range.001"].inputs[8].default_value
+    [09] To Min [To_Min_FLOAT3] = bpy.data.node_groups['TreeBase'].nodes["Map Range.001"].inputs[9].default_value
+    [10] To Max [To_Max_FLOAT3] = bpy.data.node_groups['TreeBase'].nodes["Map Range.001"].inputs[10].default_value
+    [11] Steps [Steps_FLOAT3] = bpy.data.node_groups['TreeBase'].nodes["Map Range.001"].inputs[11].default_value
+  Outputs:
+    [00] Result  <LINKED>
+    [01] Vector
+
+[010] Float Curve
+  Label      : ''
+  Type       : ShaderNodeFloatCurve
+  Location   : (-1469.1, -1072.2)
+  Properties:
+    mapping: bpy.data.node_groups['TreeBase']...CurveMapping
+  Inputs:
+    [00] Factor = 1.0
+    [01] Value = 1.0  <LINKED>
+  Outputs:
+    [00] Value  <LINKED>
+
+[011] Math.022
+  Label      : 'Normalized Fork Position'
+  Type       : ShaderNodeMath
+  Location   : (-1375.3, -844.8)
+  Properties:
+    operation: 'DIVIDE'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.5  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[012] Math.016
+  Label      : 'Fork Index Float'
+  Type       : ShaderNodeMath
+  Location   : (-1367.1, -677.5)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 1.0  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[013] Math.040
+  Label      : 'Base Flare Amount'
+  Type       : ShaderNodeMath
+  Location   : (-1357.9, -1683.0)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[014] Math.044
+  Label      : 'Base Flare Amount at Fork'
+  Type       : ShaderNodeMath
+  Location   : (-1344.1, -1519.0)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[015] Curve to Points
+  Label      : ''
+  Type       : GeometryNodeCurveToPoints
+  Location   : (-1233.9, -2217.4)
+  Properties:
+    mode: 'COUNT'
+  Inputs:
+    [00] Curve  <LINKED>
+    [01] Count = 10  <LINKED>
+    [02] Length = 0.10000000149011612
+  Outputs:
+    [00] Points  <LINKED>
+    [01] Tangent  <LINKED>
+    [02] Normal
+    [03] Rotation
+
+[016] Float Curve.003
+  Label      : 'Trunk Taper at Fork'
+  Type       : ShaderNodeFloatCurve
+  Location   : (-1192.9, -1030.9)
+  Properties:
+    mapping: bpy.data.node_groups['TreeBase']...CurveMapping
+  Inputs:
+    [00] Factor = 1.0
+    [01] Value = 1.0  <LINKED>
+  Outputs:
+    [00] Value  <LINKED>
+
+[017] Position
+  Label      : ''
+  Type       : GeometryNodeInputPosition
+  Location   : (-1191.5, -625.4)
+  Inputs:
+  Outputs:
+    [00] Position  <LINKED>
+
+[018] Math.017
+  Label      : 'Fork Index'
+  Type       : ShaderNodeMath
+  Location   : (-1191.4, -687.6)
+  Properties:
+    operation: 'ROUND'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.5
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[019] Math.064
+  Label      : 'Active Fork Child Count'
+  Type       : ShaderNodeMath
+  Location   : (-1188.0, -462.1)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[020] Math.093
+  Label      : 'Fork Radial Variation Seed'
+  Type       : ShaderNodeMath
+  Location   : (-1180.8, -1221.7)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 800.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[021] Math.092
+  Label      : 'Negative Fork Radial Randomness'
+  Type       : ShaderNodeMath
+  Location   : (-1178.9, -1064.5)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = -1.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[022] Math.043
+  Label      : 'Final Trunk Scale'
+  Type       : ShaderNodeMath
+  Location   : (-1177.4, -1522.1)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[023] Math.095
+  Label      : 'Trunk Axis Radius'
+  Type       : ShaderNodeMath
+  Location   : (-1176.2, -851.5)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[024] Curve Circle
+  Label      : ''
+  Type       : GeometryNodeCurvePrimitiveCircle
+  Location   : (-1176.1, -1387.2)
+  Properties:
+    mode: 'RADIUS'
+  Inputs:
+    [00] Resolution = 8
+    [01] Point 1 = (-1.0, 0.0, 0.0)
+    [02] Point 2 = (0.0, 1.0, 0.0)
+    [03] Point 3 = (1.0, 0.0, 0.0)
+    [04] Radius = 1.0  <LINKED>
+  Outputs:
+    [00] Curve  <LINKED>
+    [01] Center
+
+[025] Math.041
+  Label      : 'Base Flare Factor'
+  Type       : ShaderNodeMath
+  Location   : (-1170.8, -1679.5)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 1.0
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[026] Math.045
+  Label      : 'Base Flare Factor at Fork'
+  Type       : ShaderNodeMath
+  Location   : (-972.2, -1582.8)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 1.0
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[027] Math.042
+  Label      : 'Final Trunk Radius'
+  Type       : ShaderNodeMath
+  Location   : (-954.1, -1400.8)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[028] Curve to Mesh
+  Label      : 'Trunk Mesh'
+  Type       : GeometryNodeCurveToMesh
+  Location   : (-949.9, -1237.6)
+  Inputs:
+    [00] Curve  <LINKED>
+    [01] Profile Curve  <LINKED>
+    [02] Scale = 1.0  <LINKED>
+    [03] Fill Caps = True
+  Outputs:
+    [00] Mesh  <LINKED>
+
+[029] Sample Index
+  Label      : 'Sample Fork Position'
+  Type       : GeometryNodeSampleIndex
+  Location   : (-942.5, -463.9)
+  Properties:
+    data_type: 'FLOAT_VECTOR'
+    domain: 'POINT'
+    clamp: True
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Value = bpy.data.node_groups['TreeBase'].nodes["Sample Index"].inputs[1].default_value  <LINKED>
+    [02] Index = 0  <LINKED>
+  Outputs:
+    [00] Value  <LINKED>
+
+[030] Sample Index.006
+  Label      : 'Sample Fork Tangent'
+  Type       : GeometryNodeSampleIndex
+  Location   : (-938.4, -674.0)
+  Properties:
+    data_type: 'FLOAT_VECTOR'
+    domain: 'POINT'
+    clamp: True
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Value = bpy.data.node_groups['TreeBase'].nodes["Sample Index.006"].inputs[1].default_value  <LINKED>
+    [02] Index = 0  <LINKED>
+  Outputs:
+    [00] Value  <LINKED>
+
+[031] Random Value.008
+  Label      : 'Current Fork Radial Variation'
+  Type       : FunctionNodeRandomValue
+  Location   : (-937.6, -1050.8)
+  Properties:
+    data_type: 'FLOAT'
+  Inputs:
+    [00] Min = 0.0  <LINKED>
+    [01] Max = 1.0  <LINKED>
+    [02] ID = 0  <LINKED>
+    [03] Seed = 0  <LINKED>
+  Outputs:
+    [00] Value  <LINKED>
+
+[032] Math.019
+  Label      : 'Fork Radial Step'
+  Type       : ShaderNodeMath
+  Location   : (-937.5, -882.1)
+  Properties:
+    operation: 'DIVIDE'
+  Inputs:
+    [00] Value = 6.2831854820251465
+    [01] Value [Value_001] = 0.5  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[033] Points.001
+  Label      : 'Fork Child Iterations'
+  Type       : GeometryNodePoints
+  Location   : (-779.8, -532.5)
+  Inputs:
+    [00] Count = 1  <LINKED>
+    [01] Position = (0.0, 0.0, 0.0)
+    [02] Radius = 0.10000000149011612
+  Outputs:
+    [00] Points [Geometry]  <LINKED>
+
+[034] Align Rotation to Vector
+  Label      : 'Align Fork to Trunk'
+  Type       : FunctionNodeAlignRotationToVector
+  Location   : (-774.3, -729.4)
+  Inputs:
+    [00] Rotation = Euler((0.0, 0.0, 0.0), 'XYZ')
+    [01] Factor = 1.0
+    [02] Vector = (0.0, 0.0, 1.0)  <LINKED>
+  Outputs:
+    [00] Rotation  <LINKED>
+
+[035] Math.090
+  Label      : 'Fork Length Variation Seed'
+  Type       : ShaderNodeMath
+  Location   : (-772.7, -1383.0)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 700.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[036] Math.080
+  Label      : ' Parent Radius at Fork'
+  Type       : ShaderNodeMath
+  Location   : (-772.3, -893.4)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[037] Math.089
+  Label      : 'Fork Max Length Factor'
+  Type       : ShaderNodeMath
+  Location   : (-771.5, -1212.6)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 1.0
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[038] Math.088
+  Label      : 'Fork Min Length Factor'
+  Type       : ShaderNodeMath
+  Location   : (-771.5, -1051.8)
+  Properties:
+    operation: 'SUBTRACT'
+  Inputs:
+    [00] Value = 1.0
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[039] Math.046
+  Label      : 'Final Parent Radius at Fork'
+  Type       : ShaderNodeMath
+  Location   : (-770.3, -1550.8)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[040] Math.086
+  Label      : 'Negative Fork Randomness'
+  Type       : ShaderNodeMath
+  Location   : (-753.7, -346.8)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = -1.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[041] Math.021
+  Label      : 'Fork Noise Index Offset'
+  Type       : ShaderNodeMath
+  Location   : (-596.4, -1558.8)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 17.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[042] Store Named Attribute
+  Label      : 'Store Trunk Axis Radius'
+  Type       : GeometryNodeStoreNamedAttribute
+  Location   : (-592.3, -481.7)
+  Properties:
+    data_type: 'FLOAT'
+    domain: 'POINT'
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Selection = True
+    [02] Name = 'echo_axis_radius'
+    [03] Value = 0.0  <LINKED>
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[043] For Each Geometry Element Input.001
+  Label      : 'For Each Fork Input'
+  Type       : GeometryNodeForeachGeometryElementInput
+  Location   : (-591.6, -697.8)
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Selection = True
+    [02] Fork Position [Input_1] = bpy.data.node_groups['TreeBase'].nodes["For Each Geometry Element Input.001"].inputs[2].default_value  <LINKED>
+    [03] Fork Rotation [Input_2] = Euler((0.0, 0.0, 0.0), 'XYZ')  <LINKED>
+    [04] Parent Radius [Input_3] = 0.0  <LINKED>
+    [05]  [__extend__]
+  Outputs:
+    [00] Index  <LINKED>
+    [01] Element
+    [02] Fork Position [Input_1]  <LINKED>
+    [03] Fork Rotation [Input_2]  <LINKED>
+    [04] Parent Radius [Input_3]  <LINKED>
+    [05]  [__extend__]
+
+[044] Math.083
+  Label      : 'Fork Variation Seed'
+  Type       : ShaderNodeMath
+  Location   : (-581.5, -315.0)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.0  <LINKED>
+    [01] Value [Value_001] = 600.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[045] Combine XYZ.002
+  Label      : 'Fork Noise Coordinate'
+  Type       : ShaderNodeCombineXYZ
+  Location   : (-569.1, -1393.1)
+  Inputs:
+    [00] X = 0.0  <LINKED>
+    [01] Y = 0.0
+    [02] Z = 0.0
+  Outputs:
+    [00] Vector  <LINKED>
+
+[046] Random Value.007
+  Label      : 'Current Fork Length Factor'
+  Type       : FunctionNodeRandomValue
+  Location   : (-552.2, -962.4)
+  Properties:
+    data_type: 'FLOAT'
+  Inputs:
+    [00] Min = 0.0  <LINKED>
+    [01] Max = 1.0  <LINKED>
+    [02] ID = 0  <LINKED>
+    [03] Seed = 0  <LINKED>
+  Outputs:
+    [00] Value  <LINKED>
+
+[047] Vector Math
+  Label      : 'Scale Fork Noise Coordinate'
+  Type       : ShaderNodeVectorMath
+  Location   : (-400.7, -1391.1)
+  Properties:
+    operation: 'SCALE'
+  Inputs:
+    [00] Vector = bpy.data.node_groups['TreeBase'].nodes["Vector Math"].inputs[0].default_value  <LINKED>
+    [01] Vector [Vector_001] = bpy.data.node_groups['TreeBase'].nodes["Vector Math"].inputs[1].default_value
+    [02] Vector [Vector_002] = bpy.data.node_groups['TreeBase'].nodes["Vector Math"].inputs[2].default_value
+    [03] Scale = 1.0  <LINKED>
+  Outputs:
+    [00] Vector  <LINKED>
+    [01] Value
+
+[048] Math.020
+  Label      : 'Current Fork Noise Seed'
+  Type       : ShaderNodeMath
+  Location   : (-400.0, -1527.6)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[049] Spline Parameter.001
+  Label      : 'Current Fork Parameter'
+  Type       : GeometryNodeSplineParameter
+  Location   : (-397.6, -543.3)
+  Inputs:
+  Outputs:
+    [00] Factor  <LINKED>
+    [01] Length
+    [02] Index
+
+[050] Math.066
+  Label      : 'Current Fork Number'
+  Type       : ShaderNodeMath
+  Location   : (-394.6, -660.1)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[051] Math.091
+  Label      : 'Current Fork Length'
+  Type       : ShaderNodeMath
+  Location   : (-389.7, -827.1)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[052] Math.067
+  Label      : 'Safe Current Fork Angle'
+  Type       : ShaderNodeMath
+  Location   : (-379.4, -353.7)
+  Properties:
+    operation: 'MAXIMUM'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 9.999999747378752e-05
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[053] Random Value.006
+  Label      : 'Current Fork Angle Variation'
+  Type       : FunctionNodeRandomValue
+  Location   : (-372.7, -178.4)
+  Properties:
+    data_type: 'FLOAT'
+  Inputs:
+    [00] Min = 0.0  <LINKED>
+    [01] Max = 1.0  <LINKED>
+    [02] ID = 0  <LINKED>
+    [03] Seed = 0  <LINKED>
+  Outputs:
+    [00] Value  <LINKED>
+
+[054] Math.065
+  Label      : 'Current Fork Radial Angle'
+  Type       : ShaderNodeMath
+  Location   : (-228.5, -569.6)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[055] Math.068
+  Label      : 'Current Fork Angle Along Curve'
+  Type       : ShaderNodeMath
+  Location   : (-226.7, -396.5)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 1.0  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[056] Math.087
+  Label      : 'Current Fork Angle'
+  Type       : ShaderNodeMath
+  Location   : (-217.3, -217.4)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[057] Noise Texture.001
+  Label      : ''
+  Type       : ShaderNodeTexNoise
+  Location   : (-212.0, -1330.0)
+  Inputs:
+    [00] Vector = bpy.data.node_groups['TreeBase'].nodes["Noise Texture.001"].inputs[0].default_value  <LINKED>
+    [01] W = 0.0  <LINKED>
+    [02] Scale = 1.0
+    [03] Detail = 2.0
+    [04] Roughness = 0.5
+    [05] Lacunarity = 2.0
+    [06] Offset = 0.0
+    [07] Gain = 1.0
+    [08] Distortion = 0.0
+  Outputs:
+    [00] Factor [Fac]
+    [01] Color  <LINKED>
+
+[058] Curve Line
+  Label      : 'Fork Child Base Curve'
+  Type       : GeometryNodeCurvePrimitiveLine
+  Location   : (-206.4, -734.0)
+  Properties:
+    mode: 'DIRECTION'
+  Inputs:
+    [00] Start = (0.0, 0.0, 0.0)
+    [01] End = (0.0, 0.0, 1.0)
+    [02] Direction = bpy.data.node_groups['TreeBase'].nodes["Curve Line"].inputs[2].default_value
+    [03] Length = 1.0  <LINKED>
+  Outputs:
+    [00] Curve  <LINKED>
+
+[059] Math.081
+  Label      : 'Current Fork Radius Progress'
+  Type       : ShaderNodeMath
+  Location   : (-205.7, -1169.2)
+  Properties:
+    operation: 'SUBTRACT'
+  Inputs:
+    [00] Value = 1.0
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[060] Math.084
+  Label      : 'Current Fork Base Radius'
+  Type       : ShaderNodeMath
+  Location   : (-204.4, -1012.1)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[061] Math.069
+  Label      : 'Current Fork Bend Cos'
+  Type       : ShaderNodeMath
+  Location   : (-56.2, -274.4)
+  Properties:
+    operation: 'COSINE'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.5
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[062] Math.070
+  Label      : 'Current Fork Radial Numerator'
+  Type       : ShaderNodeMath
+  Location   : (-47.6, -58.0)
+  Properties:
+    operation: 'SUBTRACT'
+  Inputs:
+    [00] Value = 1.0
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[063] Math.073
+  Label      : 'Current Fork Bend Sin'
+  Type       : ShaderNodeMath
+  Location   : (-32.6, -413.8)
+  Properties:
+    operation: 'SINE'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.5
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[064] Math.094
+  Label      : 'Final Fork Radial Angle'
+  Type       : ShaderNodeMath
+  Location   : (-27.0, -647.8)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[065] Math.023
+  Label      : 'Fork Noise Growth Mask'
+  Type       : ShaderNodeMath
+  Location   : (-25.3, -1537.1)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[066] Math.024
+  Label      : 'Fork Noise Amplitude'
+  Type       : ShaderNodeMath
+  Location   : (-18.0, -1375.0)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[067] Vector Math.001
+  Label      : 'Center Fork Noise'
+  Type       : ShaderNodeVectorMath
+  Location   : (-17.0, -1177.8)
+  Properties:
+    operation: 'SUBTRACT'
+  Inputs:
+    [00] Vector = bpy.data.node_groups['TreeBase'].nodes["Vector Math.001"].inputs[0].default_value  <LINKED>
+    [01] Vector [Vector_001] = bpy.data.node_groups['TreeBase'].nodes["Vector Math.001"].inputs[1].default_value
+    [02] Vector [Vector_002] = bpy.data.node_groups['TreeBase'].nodes["Vector Math.001"].inputs[2].default_value
+    [03] Scale = 1.0
+  Outputs:
+    [00] Vector  <LINKED>
+    [01] Value
+
+[068] Math.082
+  Label      : 'Current Fork Radius'
+  Type       : ShaderNodeMath
+  Location   : (-16.1, -1018.0)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[069] Math.037
+  Label      : 'O2 Branch End'
+  Type       : ShaderNodeMath
+  Location   : (0.5, -2636.8)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[070] Math.034
+  Label      : 'O2 Branch Start'
+  Type       : ShaderNodeMath
+  Location   : (0.5, -2472.8)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[071] Resample Curve.001
+  Label      : 'Current Fork Resolution'
+  Type       : GeometryNodeResampleCurve
+  Location   : (11.4, -887.1)
+  Inputs:
+    [00] Curve  <LINKED>
+    [01] Selection = True
+    [02] Mode = 'Count'
+    [03] Count = 12
+    [04] Length = 0.10000000149011612
+  Outputs:
+    [00] Curve  <LINKED>
+
+[072] Group
+  Label      : 'Generate Order 1'
+  Type       : GeometryNodeGroup
+  Location   : (29.6, -83.2)
+  Inputs:
+    [00] Seed [Socket_0] = 0  <LINKED>
+    [01] Length Randomness [Socket_1] = 0.0  <LINKED>
+    [02] Angle Randomness [Socket_2] = 0.0  <LINKED>
+    [03] Geometry [Socket_3]  <LINKED>
+    [04] Segments Count [Socket_6] = 5  <LINKED>
+    [05] Branch Spawn Count [Socket_7] = 0  <LINKED>
+    [06] Branch Start [Socket_8] = 0.0  <LINKED>
+    [07] Branch End [Socket_9] = 0.0  <LINKED>
+    [08] Branch Density [Socket_10] = 0.0  <LINKED>
+    [09] Branch Resolution [Socket_17] = 0  <LINKED>
+    [10] Branch Radius Ratio [Socket_11] = 0.0  <LINKED>
+    [11] Branch Length [Socket_12] = 0.0  <LINKED>
+    [12] Branch Angle [Socket_13] = 0.0  <LINKED>
+    [13] Branch Curvature [Socket_14] = 0.0  <LINKED>
+    [14] Branch Lateral Bias [Socket_15] = 0.0  <LINKED>
+    [15] Branch Gravity [Socket_16] = 0.0  <LINKED>
+  Outputs:
+    [00] Child Geometry [Socket_4]  <LINKED>
+    [01] Child Axes [Socket_5]  <LINKED>
+
+[073] Group.005
+  Label      : ''
+  Type       : GeometryNodeGroup
+  Location   : (29.7, -75.5)
+  Inputs:
+    [00] Order 1 Axes [Socket_1]  <LINKED>
+    [01] Order 2 Axes [Socket_2]  <LINKED>
+    [02] Order 3 Axes [Socket_0]  <LINKED>
+    [03] Order 4 Axes [Socket_3]  <LINKED>
+    [04] Foliage Spacing [Socket_4] = 0.0  <LINKED>
+    [05] Branch Levels [Socket_6] = 0  <LINKED>
+    [06] Foliage Start [Socket_7] = 0.0  <LINKED>
+    [07] Seed [Socket_8] = 0  <LINKED>
+    [08] Foliage Density [Socket_9] = 0.0  <LINKED>
+    [09] Opposite Leaves [Socket_11] = False  <LINKED>
+    [10] Leaf Angle Randomness [Socket_12] = 0.0  <LINKED>
+    [11] Leaf Plane Randomness [Socket_13] = 0.0  <LINKED>
+    [12] Leaf Size [Socket_14] = 0.0  <LINKED>
+    [13] Custom Leaf [Socket_15] = None  <LINKED>
+    [14] Use Custom Leaf [Socket_16] = False  <LINKED>
+  Outputs:
+    [00] Instances [Socket_5]  <LINKED>
+
+[074] Group.004
+  Label      : ''
+  Type       : GeometryNodeGroup
+  Location   : (29.7, -56.0)
+  Inputs:
+    [00] Points [Socket_0]  <LINKED>
+    [01] Position [Socket_1] = bpy.data.node_groups['TreeBase'].nodes["Group.004"].inputs[1].default_value  <LINKED>
+    [02] Tangent [Socket_2] = bpy.data.node_groups['TreeBase'].nodes["Group.004"].inputs[2].default_value  <LINKED>
+    [03] Root Count [Socket_3] = 0  <LINKED>
+    [04] Roots [Socket_4] = False  <LINKED>
+    [05] Root Depth [Socket_6] = 0.0  <LINKED>
+    [06] Root Spread Randomness [Socket_7] = 0.0  <LINKED>
+    [07] Seed [Socket_8] = 0  <LINKED>
+    [08] Root Length Randomness [Socket_9] = 0.0  <LINKED>
+    [09] Root Length [Socket_10] = 0.0  <LINKED>
+    [10] Root Curvature [Socket_11] = 0.0  <LINKED>
+    [11] Radius [Socket_12] = 12.715160369873047  <LINKED>
+    [12] Base Flare [Socket_13] = 0.0  <LINKED>
+  Outputs:
+    [00] Mesh [Socket_5]  <LINKED>
+    [01] Instances [Socket_14]  <LINKED>
+
+[075] Math.071
+  Label      : 'Current Fork Radial Distance'
+  Type       : ShaderNodeMath
+  Location   : (153.0, -47.0)
+  Properties:
+    operation: 'DIVIDE'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[076] Math.025
+  Label      : 'Fork Noise Weighted Amplitude'
+  Type       : ShaderNodeMath
+  Location   : (155.7, -1382.3)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[077] Math.076
+  Label      : 'Current Fork Radial Cos'
+  Type       : ShaderNodeMath
+  Location   : (156.5, -531.4)
+  Properties:
+    operation: 'COSINE'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.5
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[078] Vector Math.002
+  Label      : 'Fork Lateral Noise'
+  Type       : ShaderNodeVectorMath
+  Location   : (156.9, -1186.2)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Vector = bpy.data.node_groups['TreeBase'].nodes["Vector Math.002"].inputs[0].default_value  <LINKED>
+    [01] Vector [Vector_001] = bpy.data.node_groups['TreeBase'].nodes["Vector Math.002"].inputs[1].default_value
+    [02] Vector [Vector_002] = bpy.data.node_groups['TreeBase'].nodes["Vector Math.002"].inputs[2].default_value
+    [03] Scale = 1.0
+  Outputs:
+    [00] Vector  <LINKED>
+    [01] Value
+
+[079] Math.072
+  Label      : 'Current Fork Radial Distance Scaled'
+  Type       : ShaderNodeMath
+  Location   : (157.3, -209.0)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[080] Math.074
+  Label      : 'Current Fork Z Factor'
+  Type       : ShaderNodeMath
+  Location   : (159.6, -363.1)
+  Properties:
+    operation: 'DIVIDE'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[081] Math.077
+  Label      : 'Current Fork Radial Sin'
+  Type       : ShaderNodeMath
+  Location   : (159.7, -666.6)
+  Properties:
+    operation: 'SINE'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.5
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[082] Clamp.006
+  Label      : 'Clamp O2 Branch End'
+  Type       : ShaderNodeClamp
+  Location   : (170.9, -2636.3)
+  Inputs:
+    [00] Value = 1.0  <LINKED>
+    [01] Min = 0.0
+    [02] Max = 1.0
+  Outputs:
+    [00] Result  <LINKED>
+
+[083] Clamp.003
+  Label      : 'Clamp O2 Branch Start'
+  Type       : ShaderNodeClamp
+  Location   : (170.9, -2472.3)
+  Inputs:
+    [00] Value = 1.0  <LINKED>
+    [01] Min = 0.0
+    [02] Max = 1.0
+  Outputs:
+    [00] Result  <LINKED>
+
+[084] Math.048
+  Label      : 'Preview Branch Spawn Count'
+  Type       : ShaderNodeMath
+  Location   : (201.6, -2006.7)
+  Properties:
+    operation: 'MINIMUM'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 3.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[085] Set Position.003
+  Label      : 'Shape Current Fork'
+  Type       : GeometryNodeSetPosition
+  Location   : (212.1, -838.6)
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Selection = True
+    [02] Position = bpy.data.node_groups['TreeBase'].nodes["Set Position.003"].inputs[2].default_value  <LINKED>
+    [03] Offset = (0.0, 0.0, 0.0)
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[086] Curve Circle.001
+  Label      : 'Fork Child Profile'
+  Type       : GeometryNodeCurvePrimitiveCircle
+  Location   : (214.2, -1028.9)
+  Properties:
+    mode: 'RADIUS'
+  Inputs:
+    [00] Resolution = 8
+    [01] Point 1 = (-1.0, 0.0, 0.0)
+    [02] Point 2 = (0.0, 1.0, 0.0)
+    [03] Point 3 = (1.0, 0.0, 0.0)
+    [04] Radius = 1.0
+  Outputs:
+    [00] Curve  <LINKED>
+    [01] Center
+
+[087] Group.001
+  Label      : 'Generate Order 2'
+  Type       : GeometryNodeGroup
+  Location   : (302.2, -83.7)
+  Inputs:
+    [00] Seed [Socket_0] = 1000  <LINKED>
+    [01] Length Randomness [Socket_1] = 0.25  <LINKED>
+    [02] Angle Randomness [Socket_2] = 0.2617993950843811  <LINKED>
+    [03] Geometry [Socket_3]  <LINKED>
+    [04] Segments Count [Socket_6] = 12  <LINKED>
+    [05] Branch Spawn Count [Socket_7] = 3  <LINKED>
+    [06] Branch Start [Socket_8] = 0.25  <LINKED>
+    [07] Branch End [Socket_9] = 0.8999999761581421  <LINKED>
+    [08] Branch Density [Socket_10] = 1.0  <LINKED>
+    [09] Branch Resolution [Socket_17] = 0  <LINKED>
+    [10] Branch Radius Ratio [Socket_11] = 0.6499999761581421  <LINKED>
+    [11] Branch Length [Socket_12] = 1.0  <LINKED>
+    [12] Branch Angle [Socket_13] = 0.8726646304130554  <LINKED>
+    [13] Branch Curvature [Socket_14] = 0.0  <LINKED>
+    [14] Branch Lateral Bias [Socket_15] = 0.0  <LINKED>
+    [15] Branch Gravity [Socket_16] = 0.0  <LINKED>
+  Outputs:
+    [00] Child Geometry [Socket_4]  <LINKED>
+    [01] Child Axes [Socket_5]  <LINKED>
+
+[088] Vector Math.003
+  Label      : 'Current Fork Noise Offset'
+  Type       : ShaderNodeVectorMath
+  Location   : (321.0, -1209.3)
+  Properties:
+    operation: 'SCALE'
+  Inputs:
+    [00] Vector = bpy.data.node_groups['TreeBase'].nodes["Vector Math.003"].inputs[0].default_value  <LINKED>
+    [01] Vector [Vector_001] = bpy.data.node_groups['TreeBase'].nodes["Vector Math.003"].inputs[1].default_value
+    [02] Vector [Vector_002] = bpy.data.node_groups['TreeBase'].nodes["Vector Math.003"].inputs[2].default_value
+    [03] Scale = 1.0  <LINKED>
+  Outputs:
+    [00] Vector  <LINKED>
+    [01] Value
+
+[089] Switch.004
+  Label      : 'Effective Branch Spawn Count'
+  Type       : GeometryNodeSwitch
+  Location   : (383.5, -2008.6)
+  Properties:
+    input_type: 'INT'
+  Inputs:
+    [00] Switch = False  <LINKED>
+    [01] False = 0  <LINKED>
+    [02] True = 0  <LINKED>
+  Outputs:
+    [00] Output  <LINKED>
+
+[090] Set Position.001
+  Label      : 'Apply Fork Natural Growth'
+  Type       : GeometryNodeSetPosition
+  Location   : (398.4, -990.1)
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Selection = True
+    [02] Position = bpy.data.node_groups['TreeBase'].nodes["Set Position.001"].inputs[2].default_value
+    [03] Offset = (0.0, 0.0, 0.0)  <LINKED>
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[091] Math.038
+  Label      : 'O3 Branch End'
+  Type       : ShaderNodeMath
+  Location   : (400.4, -2665.3)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[092] Math.047
+  Label      : 'Preview Branch Levels'
+  Type       : ShaderNodeMath
+  Location   : (401.1, -1745.0)
+  Properties:
+    operation: 'MINIMUM'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 2.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[093] Compare.004
+  Label      : 'O2 Spawn Region Valid'
+  Type       : FunctionNodeCompare
+  Location   : (401.8, -2506.8)
+  Properties:
+    operation: 'GREATER_THAN'
+    data_type: 'FLOAT'
+    mode: 'ELEMENT'
+  Inputs:
+    [00] A = 0.0  <LINKED>
+    [01] B = 0.0  <LINKED>
+  Outputs:
+    [00] Result  <LINKED>
+
+[094] Math.075
+  Label      : 'Current Fork Z Distance'
+  Type       : ShaderNodeMath
+  Location   : (425.9, -620.7)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[095] Math.078
+  Label      : 'Current Fork X Distance'
+  Type       : ShaderNodeMath
+  Location   : (427.2, -303.2)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[096] Math.079
+  Label      : 'Current Fork Y Distance'
+  Type       : ShaderNodeMath
+  Location   : (427.4, -461.3)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[097] Curve to Mesh.003
+  Label      : 'Build Current Fork Mesh'
+  Type       : GeometryNodeCurveToMesh
+  Location   : (530.7, -786.4)
+  Inputs:
+    [00] Curve  <LINKED>
+    [01] Profile Curve  <LINKED>
+    [02] Scale = 0.15000000596046448  <LINKED>
+    [03] Fill Caps = True
+  Outputs:
+    [00] Mesh  <LINKED>
+
+[098] Transform Geometry.005
+  Label      : 'Orient Fork Axis'
+  Type       : GeometryNodeTransform
+  Location   : (579.4, -1079.7)
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Mode = 'Components'
+    [02] Translation = (0.0, 0.0, 0.0)
+    [03] Rotation = Euler((0.0, 0.0, 0.0), 'XYZ')  <LINKED>
+    [04] Scale = (1.0, 1.0, 1.0)
+    [05] Transform
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[099] Clamp.007
+  Label      : 'Clamp O3 Branch End'
+  Type       : ShaderNodeClamp
+  Location   : (590.6, -2675.7)
+  Inputs:
+    [00] Value = 1.0  <LINKED>
+    [01] Min = 0.0
+    [02] Max = 1.0
+  Outputs:
+    [00] Result  <LINKED>
+
+[100] Group.002
+  Label      : 'Generate Order 3'
+  Type       : GeometryNodeGroup
+  Location   : (595.3, -76.1)
+  Inputs:
+    [00] Seed [Socket_0] = 1000  <LINKED>
+    [01] Length Randomness [Socket_1] = 0.25  <LINKED>
+    [02] Angle Randomness [Socket_2] = 0.2617993950843811  <LINKED>
+    [03] Geometry [Socket_3]  <LINKED>
+    [04] Segments Count [Socket_6] = 12  <LINKED>
+    [05] Branch Spawn Count [Socket_7] = 3  <LINKED>
+    [06] Branch Start [Socket_8] = 0.25  <LINKED>
+    [07] Branch End [Socket_9] = 0.8999999761581421  <LINKED>
+    [08] Branch Density [Socket_10] = 1.0  <LINKED>
+    [09] Branch Resolution [Socket_17] = 0  <LINKED>
+    [10] Branch Radius Ratio [Socket_11] = 0.6499999761581421  <LINKED>
+    [11] Branch Length [Socket_12] = 1.0  <LINKED>
+    [12] Branch Angle [Socket_13] = 0.8726646304130554  <LINKED>
+    [13] Branch Curvature [Socket_14] = 0.0  <LINKED>
+    [14] Branch Lateral Bias [Socket_15] = 0.0  <LINKED>
+    [15] Branch Gravity [Socket_16] = 0.0  <LINKED>
+  Outputs:
+    [00] Child Geometry [Socket_4]  <LINKED>
+    [01] Child Axes [Socket_5]  <LINKED>
+
+[101] Switch.003
+  Label      : 'Effective Branch Levels'
+  Type       : GeometryNodeSwitch
+  Location   : (595.6, -1730.8)
+  Properties:
+    input_type: 'INT'
+  Inputs:
+    [00] Switch = False  <LINKED>
+    [01] False = 0  <LINKED>
+    [02] True = 0  <LINKED>
+  Outputs:
+    [00] Output  <LINKED>
+
+[102] Math.010
+  Label      : 'Order 3 Seed'
+  Type       : ShaderNodeMath
+  Location   : (595.8, -1887.6)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.0  <LINKED>
+    [01] Value [Value_001] = 2000.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[103] Math.014
+  Label      : 'O2 Angle Evolution'
+  Type       : ShaderNodeMath
+  Location   : (597.1, -2358.4)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[104] Math.033
+  Label      : 'Order 4 Seed'
+  Type       : ShaderNodeMath
+  Location   : (597.2, -2198.5)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.0  <LINKED>
+    [01] Value [Value_001] = 3000.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[105] Compare.001
+  Label      : 'Order 1 Enabled'
+  Type       : FunctionNodeCompare
+  Location   : (597.7, -2043.5)
+  Properties:
+    operation: 'GREATER_EQUAL'
+    data_type: 'INT'
+    mode: 'ELEMENT'
+  Inputs:
+    [00] A = 0  <LINKED>
+    [01] B = 1
+  Outputs:
+    [00] Result  <LINKED>
+
+[106] Math.035
+  Label      : 'O3 Branch Start'
+  Type       : ShaderNodeMath
+  Location   : (598.6, -2517.1)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[107] Math.002
+  Label      : 'O2 Spawn Count Decay'
+  Type       : ShaderNodeMath
+  Location   : (636.1, -1568.0)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.6499999761581421  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[108] Combine XYZ.005
+  Label      : 'Current Fork Curved Position'
+  Type       : ShaderNodeCombineXYZ
+  Location   : (679.8, -417.4)
+  Inputs:
+    [00] X = 0.0  <LINKED>
+    [01] Y = 0.0  <LINKED>
+    [02] Z = 0.0  <LINKED>
+  Outputs:
+    [00] Vector  <LINKED>
+
+[109] Transform Geometry.003
+  Label      : 'Orient Current Fork'
+  Type       : GeometryNodeTransform
+  Location   : (729.7, -776.8)
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Mode = 'Components'
+    [02] Translation = (0.0, 0.0, 0.0)
+    [03] Rotation = Euler((0.0, 0.0, 0.0), 'XYZ')  <LINKED>
+    [04] Scale = (1.0, 1.0, 1.0)
+    [05] Transform
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[110] Frame.001
+  Label      : 'ECHO Root System'
+  Type       : NodeFrame
+  Location   : (765.0, -2925.0)
+  Inputs:
+  Outputs:
+
+[111] Transform Geometry.006
+  Label      : 'Place Fork Axis'
+  Type       : GeometryNodeTransform
+  Location   : (787.7, -1048.0)
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Mode = 'Components'
+    [02] Translation = (0.0, 0.0, 0.0)  <LINKED>
+    [03] Rotation = Euler((0.0, 0.0, 0.0), 'XYZ')
+    [04] Scale = (1.0, 1.0, 1.0)
+    [05] Transform
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[112] Math.006
+  Label      : 'Active O1 Spawn Count'
+  Type       : ShaderNodeMath
+  Location   : (837.0, -2023.9)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 1.0  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[113] Math.012
+  Label      : 'O2 Radius Ratio Decay'
+  Type       : ShaderNodeMath
+  Location   : (837.2, -2332.1)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[114] Math.003
+  Label      : 'O2 Length Decay'
+  Type       : ShaderNodeMath
+  Location   : (837.3, -2177.5)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.699999988079071  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[115] Clamp
+  Label      : 'Clamp O2 Angle'
+  Type       : ShaderNodeClamp
+  Location   : (838.6, -2488.0)
+  Inputs:
+    [00] Value = 1.0  <LINKED>
+    [01] Min = 0.0
+    [02] Max = 90.0
+  Outputs:
+    [00] Result  <LINKED>
+
+[116] Math.004
+  Label      : 'Order 2 Seed'
+  Type       : ShaderNodeMath
+  Location   : (838.9, -1857.0)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.0  <LINKED>
+    [01] Value [Value_001] = 1000.0
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[117] Clamp.004
+  Label      : 'Clamp O3 Branch Start'
+  Type       : ShaderNodeClamp
+  Location   : (839.3, -2662.3)
+  Inputs:
+    [00] Value = 1.0  <LINKED>
+    [01] Min = 0.0
+    [02] Max = 1.0
+  Outputs:
+    [00] Result  <LINKED>
+
+[118] Compare
+  Label      : 'Order 2 Enabled'
+  Type       : FunctionNodeCompare
+  Location   : (839.6, -1703.9)
+  Properties:
+    operation: 'GREATER_EQUAL'
+    data_type: 'INT'
+    mode: 'ELEMENT'
+  Inputs:
+    [00] A = 0  <LINKED>
+    [01] B = 2
+  Outputs:
+    [00] Result  <LINKED>
+
+[119] Math.001
+  Label      : 'O2 Spawn Count Round'
+  Type       : ShaderNodeMath
+  Location   : (840.4, -1570.4)
+  Properties:
+    operation: 'ROUND'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.5
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[120] Group.003
+  Label      : 'Generate Order 4'
+  Type       : GeometryNodeGroup
+  Location   : (860.3, -70.1)
+  Inputs:
+    [00] Seed [Socket_0] = 1000  <LINKED>
+    [01] Length Randomness [Socket_1] = 0.25  <LINKED>
+    [02] Angle Randomness [Socket_2] = 0.2617993950843811  <LINKED>
+    [03] Geometry [Socket_3]  <LINKED>
+    [04] Segments Count [Socket_6] = 12  <LINKED>
+    [05] Branch Spawn Count [Socket_7] = 3  <LINKED>
+    [06] Branch Start [Socket_8] = 0.25  <LINKED>
+    [07] Branch End [Socket_9] = 0.8999999761581421  <LINKED>
+    [08] Branch Density [Socket_10] = 1.0  <LINKED>
+    [09] Branch Resolution [Socket_17] = 0  <LINKED>
+    [10] Branch Radius Ratio [Socket_11] = 0.6499999761581421  <LINKED>
+    [11] Branch Length [Socket_12] = 1.0  <LINKED>
+    [12] Branch Angle [Socket_13] = 0.8726646304130554  <LINKED>
+    [13] Branch Curvature [Socket_14] = 0.0  <LINKED>
+    [14] Branch Lateral Bias [Socket_15] = 0.0  <LINKED>
+    [15] Branch Gravity [Socket_16] = 0.0  <LINKED>
+  Outputs:
+    [00] Child Geometry [Socket_4]  <LINKED>
+    [01] Child Axes [Socket_5]  <LINKED>
+
+[121] Transform Geometry.004
+  Label      : 'Place Current Fork'
+  Type       : GeometryNodeTransform
+  Location   : (939.2, -764.9)
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Mode = 'Components'
+    [02] Translation = (0.0, 0.0, 0.0)  <LINKED>
+    [03] Rotation = Euler((0.0, 0.0, 0.0), 'XYZ')
+    [04] Scale = (1.0, 1.0, 1.0)
+    [05] Transform
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[122] Store Named Attribute.001
+  Label      : 'Store Fork Axis Radius'
+  Type       : GeometryNodeStoreNamedAttribute
+  Location   : (965.0, -1053.1)
+  Properties:
+    data_type: 'FLOAT'
+    domain: 'POINT'
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Selection = True
+    [02] Name = 'echo_axis_radius'
+    [03] Value = 0.0  <LINKED>
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[123] Math.039
+  Label      : 'O4 Branch End'
+  Type       : ShaderNodeMath
+  Location   : (1033.0, -2675.0)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[124] Math.013
+  Label      : 'O3 Radius Ratio Decay'
+  Type       : ShaderNodeMath
+  Location   : (1033.9, -2353.2)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[125] Math.011
+  Label      : 'O3 Branch Length'
+  Type       : ShaderNodeMath
+  Location   : (1034.0, -2196.7)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[126] Math.036
+  Label      : 'O4 Branch Start'
+  Type       : ShaderNodeMath
+  Location   : (1034.3, -2515.0)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[127] Math.007
+  Label      : 'O3 Spawn Count Decay'
+  Type       : ShaderNodeMath
+  Location   : (1114.4, -1760.0)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[128] Math.005
+  Label      : 'Active O2 Spawn Count'
+  Type       : ShaderNodeMath
+  Location   : (1114.8, -1604.2)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[129] Switch.005
+  Label      : 'Effective Branch Resolution'
+  Type       : GeometryNodeSwitch
+  Location   : (1135.3, -1961.0)
+  Properties:
+    input_type: 'FLOAT'
+  Inputs:
+    [00] Switch = False  <LINKED>
+    [01] False = 8.0
+    [02] True = 6.0
+  Outputs:
+    [00] Output  <LINKED>
+
+[130] For Each Geometry Element Output.001
+  Label      : 'For Each Fork Output'
+  Type       : GeometryNodeForeachGeometryElementOutput
+  Location   : (1185.3, -881.7)
+  Properties:
+    domain: 'POINT'
+  Inputs:
+    [00]  [__extend__main]
+    [01] Geometry [Generation_0]  <LINKED>
+    [02] Fork Axis [Generation_4]  <LINKED>
+    [03]  [__extend__generation]
+  Outputs:
+    [00] Geometry
+    [01]  [__extend__main]
+    [02] Geometry [Generation_0]  <LINKED>
+    [03] Fork Axis [Generation_4]  <LINKED>
+    [04]  [__extend__generation]
+
+[131] Math.026
+  Label      : 'O3 Angle Evolution'
+  Type       : ShaderNodeMath
+  Location   : (1186.1, -2354.4)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[132] Clamp.008
+  Label      : 'Clamp O4 Branch End'
+  Type       : ShaderNodeClamp
+  Location   : (1241.1, -2675.6)
+  Inputs:
+    [00] Value = 1.0  <LINKED>
+    [01] Min = 0.0
+    [02] Max = 1.0
+  Outputs:
+    [00] Result  <LINKED>
+
+[133] Clamp.005
+  Label      : 'Clamp O4 Branch Start'
+  Type       : ShaderNodeClamp
+  Location   : (1242.4, -2515.6)
+  Inputs:
+    [00] Value = 1.0  <LINKED>
+    [01] Min = 0.0
+    [02] Max = 1.0
+  Outputs:
+    [00] Result  <LINKED>
+
+[134] Math.008
+  Label      : 'O3 Spawn Count Round'
+  Type       : ShaderNodeMath
+  Location   : (1316.7, -1672.3)
+  Properties:
+    operation: 'ROUND'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.5
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[135] Switch
+  Label      : 'O2 Active Spawn Count'
+  Type       : GeometryNodeSwitch
+  Location   : (1316.8, -1806.5)
+  Properties:
+    input_type: 'FLOAT'
+  Inputs:
+    [00] Switch = False  <LINKED>
+    [01] False = 0.0
+    [02] True = 1.0  <LINKED>
+  Outputs:
+    [00] Output  <LINKED>
+
+[136] Compare.002
+  Label      : 'Order 3 Enabled'
+  Type       : FunctionNodeCompare
+  Location   : (1317.1, -1515.6)
+  Properties:
+    operation: 'GREATER_EQUAL'
+    data_type: 'INT'
+    mode: 'ELEMENT'
+  Inputs:
+    [00] A = 0  <LINKED>
+    [01] B = 3
+  Outputs:
+    [00] Result  <LINKED>
+
+[137] Frame
+  Label      : 'F5 — Generic Child Axis Generator'
+  Type       : NodeFrame
+  Location   : (1324.0, -1902.0)
+  Inputs:
+  Outputs:
+
+[138] Join Geometry.001
+  Label      : 'Order 0 Parent Axes'
+  Type       : GeometryNodeJoinGeometry
+  Location   : (1385.1, -1373.9)
+  Inputs:
+    [00] Geometry  <LINKED>
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[139] Clamp.001
+  Label      : 'Clamp O3 Angle'
+  Type       : ShaderNodeClamp
+  Location   : (1413.5, -2451.7)
+  Inputs:
+    [00] Value = 1.0  <LINKED>
+    [01] Min = 0.0
+    [02] Max = 90.0
+  Outputs:
+    [00] Result  <LINKED>
+
+[140] Compare.005
+  Label      : 'O3 Spawn Region Valid'
+  Type       : FunctionNodeCompare
+  Location   : (1420.7, -2621.0)
+  Properties:
+    operation: 'GREATER_THAN'
+    data_type: 'FLOAT'
+    mode: 'ELEMENT'
+  Inputs:
+    [00] A = 0.0  <LINKED>
+    [01] B = 0.0  <LINKED>
+  Outputs:
+    [00] Result  <LINKED>
+
+[141] Math.009
+  Label      : 'Active O3 Spawn Count'
+  Type       : ShaderNodeMath
+  Location   : (1501.4, -1571.0)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[142] Math.027
+  Label      : 'O4 Spawn Count Decay'
+  Type       : ShaderNodeMath
+  Location   : (1502.3, -1726.5)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[143] Math.031
+  Label      : 'O4 Radius Ratio Decay'
+  Type       : ShaderNodeMath
+  Location   : (1587.9, -2620.7)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[144] Math.030
+  Label      : 'O4 Branch Length'
+  Type       : ShaderNodeMath
+  Location   : (1624.9, -2432.1)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[145] Math.028
+  Label      : 'O4 Spawn Count Round'
+  Type       : ShaderNodeMath
+  Location   : (1676.0, -1719.8)
+  Properties:
+    operation: 'ROUND'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.5
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[146] Compare.003
+  Label      : 'Order 4 Enabled'
+  Type       : FunctionNodeCompare
+  Location   : (1676.8, -1564.6)
+  Properties:
+    operation: 'GREATER_EQUAL'
+    data_type: 'INT'
+    mode: 'ELEMENT'
+  Inputs:
+    [00] A = 0  <LINKED>
+    [01] B = 4
+  Outputs:
+    [00] Result  <LINKED>
+
+[147] Compare.006
+  Label      : 'O4 Spawn Region Valid'
+  Type       : FunctionNodeCompare
+  Location   : (1821.6, -2637.6)
+  Properties:
+    operation: 'GREATER_THAN'
+    data_type: 'FLOAT'
+    mode: 'ELEMENT'
+  Inputs:
+    [00] A = 0.0  <LINKED>
+    [01] B = 0.0  <LINKED>
+  Outputs:
+    [00] Result  <LINKED>
+
+[148] Math.032
+  Label      : 'O4 Angle Evolution'
+  Type       : ShaderNodeMath
+  Location   : (1827.5, -2470.5)
+  Properties:
+    operation: 'ADD'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 0.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[149] Switch.001
+  Label      : 'O3 Active Spawn Count'
+  Type       : GeometryNodeSwitch
+  Location   : (1851.6, -1759.3)
+  Properties:
+    input_type: 'FLOAT'
+  Inputs:
+    [00] Switch = False  <LINKED>
+    [01] False = 0.0
+    [02] True = 1.0  <LINKED>
+  Outputs:
+    [00] Output  <LINKED>
+
+[150] Math.029
+  Label      : 'Active O4 Spawn Count'
+  Type       : ShaderNodeMath
+  Location   : (1862.8, -1597.7)
+  Properties:
+    operation: 'MULTIPLY'
+  Inputs:
+    [00] Value = 0.5  <LINKED>
+    [01] Value [Value_001] = 1.0  <LINKED>
+    [02] Value [Value_002] = 0.5
+  Outputs:
+    [00] Value  <LINKED>
+
+[151] Clamp.002
+  Label      : 'Clamp O4 Angle'
+  Type       : ShaderNodeClamp
+  Location   : (2018.7, -2446.7)
+  Inputs:
+    [00] Value = 1.0  <LINKED>
+    [01] Min = 0.0
+    [02] Max = 90.0
+  Outputs:
+    [00] Result  <LINKED>
+
+[152] Switch.002
+  Label      : 'O4 Active Spawn Count'
+  Type       : GeometryNodeSwitch
+  Location   : (2026.0, -1768.5)
+  Properties:
+    input_type: 'FLOAT'
+  Inputs:
+    [00] Switch = False  <LINKED>
+    [01] False = 0.0
+    [02] True = 1.0  <LINKED>
+  Outputs:
+    [00] Output  <LINKED>
+
+[153] Store Named Attribute.002
+  Label      : 'Store O1 Axis Order'
+  Type       : GeometryNodeStoreNamedAttribute
+  Location   : (2392.8, -2064.1)
+  Properties:
+    data_type: 'INT'
+    domain: 'POINT'
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Selection = True
+    [02] Name = 'echo_axis_order'
+    [03] Value = 1
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[154] Store Named Attribute.004
+  Label      : 'Store O3 Axis Order'
+  Type       : GeometryNodeStoreNamedAttribute
+  Location   : (2393.4, -2241.2)
+  Properties:
+    data_type: 'INT'
+    domain: 'POINT'
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Selection = True
+    [02] Name = 'echo_axis_order'
+    [03] Value = 3
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[155] Store Named Attribute.005
+  Label      : 'Store O4 Axis Order'
+  Type       : GeometryNodeStoreNamedAttribute
+  Location   : (2571.2, -2240.1)
+  Properties:
+    data_type: 'INT'
+    domain: 'POINT'
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Selection = True
+    [02] Name = 'echo_axis_order'
+    [03] Value = 4
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[156] Store Named Attribute.003
+  Label      : 'Store O2 Axis Order'
+  Type       : GeometryNodeStoreNamedAttribute
+  Location   : (2572.8, -2063.0)
+  Properties:
+    data_type: 'INT'
+    domain: 'POINT'
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Selection = True
+    [02] Name = 'echo_axis_order'
+    [03] Value = 2
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[157] Frame.002
+  Label      : 'ECHO Foliage System'
+  Type       : NodeFrame
+  Location   : (3061.0, -2080.0)
+  Inputs:
+  Outputs:
+
+[158] Join Geometry
+  Label      : 'Wood Geometry'
+  Type       : GeometryNodeJoinGeometry
+  Location   : (3275.3, -1800.9)
+  Inputs:
+    [00] Geometry  <LINKED>
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[159] Set Material.001
+  Label      : 'Set Leaf Material'
+  Type       : GeometryNodeSetMaterial
+  Location   : (3452.3, -1977.4)
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Selection = True
+    [02] Material = None  <LINKED>
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[160] Set Material
+  Label      : 'Set Wood Material'
+  Type       : GeometryNodeSetMaterial
+  Location   : (3455.0, -1804.7)
+  Inputs:
+    [00] Geometry  <LINKED>
+    [01] Selection = True
+    [02] Material = None  <LINKED>
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[161] Join Geometry.002
+  Label      : 'Final Join Geometry'
+  Type       : GeometryNodeJoinGeometry
+  Location   : (3717.6, -1828.5)
+  Inputs:
+    [00] Geometry  <LINKED>
+  Outputs:
+    [00] Geometry  <LINKED>
+
+[162] Group Output
+  Label      : ''
+  Type       : NodeGroupOutput
+  Location   : (3977.8, -1812.0)
+  Inputs:
+    [00] Geometry [Socket_1]  <LINKED>
+    [01]  [__extend__]
+  Outputs:
+
+================================================================================
+LINKS
+================================================================================
+Total links: 350
+
+[001] Group Input.Geometry [Socket_0] [OUT 0]
+      -> Resample Curve.Curve [IN 0]
+[002] Curve Circle.Curve [OUT 0]
+      -> Curve to Mesh.Profile Curve [IN 1]
+[003] Spline Parameter.Factor [OUT 0]
+      -> Float Curve.Value [IN 1]
+[004] Group Input.Segments Count [Socket_3] [OUT 4]
+      -> Resample Curve.Count [IN 3]
+[005] Group Input.Radius [Socket_2] [OUT 5]
+      -> Curve Circle.Radius [IN 4]
+[006] Resample Curve.Curve [OUT 0]
+      -> Curve to Points.Curve [IN 0]
+[007] Resample Curve.Curve [OUT 0]
+      -> Curve to Mesh.Curve [IN 0]
+[008] Group Input.Segments Count [Socket_3] [OUT 4]
+      -> Math.Value [IN 0]
+[009] Group Input.Segments Count [Socket_3] [OUT 4]
+      -> Curve to Points.Count [IN 1]
+[010] Curve to Mesh.Mesh [OUT 0]
+      -> Join Geometry.Geometry [IN 0]
+[011] Math.015.Value [OUT 0]
+      -> Random Value.001.Seed [IN 3]
+[012] Group Input.Seed [Socket_4] [OUT 1]
+      -> Math.015.Value [IN 0]
+[013] Group Input.Fork Start [Socket_15] [OUT 47]
+      -> Random Value.001.Min [IN 0]
+[014] Group Input.Fork End [Socket_16] [OUT 48]
+      -> Random Value.001.Max [IN 1]
+[015] Random Value.001.Value [OUT 0]
+      -> Math.016.Value [Value_001] [IN 1]
+[016] Math.Value [OUT 0]
+      -> Math.016.Value [IN 0]
+[017] Math.016.Value [OUT 0]
+      -> Math.017.Value [IN 0]
+[018] Curve to Points.Points [OUT 0]
+      -> Sample Index.Geometry [IN 0]
+[019] Position.Position [OUT 0]
+      -> Sample Index.Value [IN 1]
+[020] Math.017.Value [OUT 0]
+      -> Sample Index.Index [IN 2]
+[021] Group Input.Fork Count [Socket_21] [OUT 45]
+      -> Math.018.Value [IN 0]
+[022] Group Input.Fork Count [Socket_21] [OUT 45]
+      -> Math.019.Value [Value_001] [IN 1]
+[023] Math.017.Value [OUT 0]
+      -> Math.022.Value [IN 0]
+[024] Math.Value [OUT 0]
+      -> Math.022.Value [Value_001] [IN 1]
+[025] Sample Index.Value [OUT 0]
+      -> For Each Geometry Element Input.001.Fork Position [Input_1] [IN 2]
+[026] Math.018.Value [OUT 0]
+      -> Math.064.Value [IN 0]
+[027] Points.001.Points [Geometry] [OUT 0]
+      -> For Each Geometry Element Input.001.Geometry [IN 0]
+[028] Math.064.Value [OUT 0]
+      -> Points.001.Count [IN 0]
+[029] Math.019.Value [OUT 0]
+      -> Math.065.Value [Value_001] [IN 1]
+[030] For Each Geometry Element Input.001.Index [OUT 0]
+      -> Math.066.Value [IN 0]
+[031] Math.066.Value [OUT 0]
+      -> Math.065.Value [IN 0]
+[032] Math.067.Value [OUT 0]
+      -> Math.068.Value [IN 0]
+[033] Spline Parameter.001.Factor [OUT 0]
+      -> Math.068.Value [Value_001] [IN 1]
+[034] Math.068.Value [OUT 0]
+      -> Math.069.Value [IN 0]
+[035] Math.069.Value [OUT 0]
+      -> Math.070.Value [Value_001] [IN 1]
+[036] Math.070.Value [OUT 0]
+      -> Math.071.Value [IN 0]
+[037] Math.067.Value [OUT 0]
+      -> Math.071.Value [Value_001] [IN 1]
+[038] Math.071.Value [OUT 0]
+      -> Math.072.Value [IN 0]
+[039] Math.068.Value [OUT 0]
+      -> Math.073.Value [IN 0]
+[040] Math.073.Value [OUT 0]
+      -> Math.074.Value [IN 0]
+[041] Math.067.Value [OUT 0]
+      -> Math.074.Value [Value_001] [IN 1]
+[042] Math.076.Value [OUT 0]
+      -> Math.078.Value [Value_001] [IN 1]
+[043] Math.072.Value [OUT 0]
+      -> Math.078.Value [IN 0]
+[044] Math.072.Value [OUT 0]
+      -> Math.079.Value [IN 0]
+[045] Math.077.Value [OUT 0]
+      -> Math.079.Value [Value_001] [IN 1]
+[046] Math.074.Value [OUT 0]
+      -> Math.075.Value [IN 0]
+[047] Math.078.Value [OUT 0]
+      -> Combine XYZ.005.X [IN 0]
+[048] Math.079.Value [OUT 0]
+      -> Combine XYZ.005.Y [IN 1]
+[049] Math.075.Value [OUT 0]
+      -> Combine XYZ.005.Z [IN 2]
+[050] Resample Curve.001.Curve [OUT 0]
+      -> Set Position.003.Geometry [IN 0]
+[051] Combine XYZ.005.Vector [OUT 0]
+      -> Set Position.003.Position [IN 2]
+[052] Curve to Mesh.003.Mesh [OUT 0]
+      -> Transform Geometry.003.Geometry [IN 0]
+[053] Transform Geometry.003.Geometry [OUT 0]
+      -> Transform Geometry.004.Geometry [IN 0]
+[054] For Each Geometry Element Input.001.Fork Position [Input_1] [OUT 2]
+      -> Transform Geometry.004.Translation [IN 2]
+[055] Transform Geometry.004.Geometry [OUT 0]
+      -> For Each Geometry Element Output.001.Geometry [Generation_0] [IN 1]
+[056] Curve Line.Curve [OUT 0]
+      -> Resample Curve.001.Curve [IN 0]
+[057] Curve to Points.Points [OUT 0]
+      -> Sample Index.006.Geometry [IN 0]
+[058] Curve to Points.Tangent [OUT 1]
+      -> Sample Index.006.Value [IN 1]
+[059] Math.017.Value [OUT 0]
+      -> Sample Index.006.Index [IN 2]
+[060] Sample Index.006.Value [OUT 0]
+      -> Align Rotation to Vector.Vector [IN 2]
+[061] Align Rotation to Vector.Rotation [OUT 0]
+      -> For Each Geometry Element Input.001.Fork Rotation [Input_2] [IN 3]
+[062] For Each Geometry Element Input.001.Fork Rotation [Input_2] [OUT 3]
+      -> Transform Geometry.003.Rotation [IN 3]
+[063] Float Curve.003.Value [OUT 0]
+      -> Math.080.Value [Value_001] [IN 1]
+[064] Group Input.Radius [Socket_2] [OUT 5]
+      -> Math.080.Value [IN 0]
+[065] Curve Circle.001.Curve [OUT 0]
+      -> Curve to Mesh.003.Profile Curve [IN 1]
+[066] Group Input.Fork Radius Ratio [Socket_19] [OUT 50]
+      -> Math.084.Value [Value_001] [IN 1]
+[067] Spline Parameter.001.Factor [OUT 0]
+      -> Math.081.Value [Value_001] [IN 1]
+[068] Math.084.Value [OUT 0]
+      -> Math.082.Value [IN 0]
+[069] Math.081.Value [OUT 0]
+      -> Math.082.Value [Value_001] [IN 1]
+[070] Math.082.Value [OUT 0]
+      -> Curve to Mesh.003.Scale [IN 2]
+[071] Math.022.Value [OUT 0]
+      -> Float Curve.003.Value [IN 1]
+[072] For Each Geometry Element Input.001.Parent Radius [Input_3] [OUT 4]
+      -> Math.084.Value [IN 0]
+[073] Group Input.Seed [Socket_4] [OUT 1]
+      -> Math.083.Value [IN 0]
+[074] Group Input.Fork Angle Randomness [Socket_20] [OUT 51]
+      -> Math.086.Value [IN 0]
+[075] Math.086.Value [OUT 0]
+      -> Random Value.006.Min [IN 0]
+[076] Group Input.Fork Angle Randomness [Socket_20] [OUT 51]
+      -> Random Value.006.Max [IN 1]
+[077] Math.083.Value [OUT 0]
+      -> Random Value.006.Seed [IN 3]
+[078] For Each Geometry Element Input.001.Index [OUT 0]
+      -> Random Value.006.ID [IN 2]
+[079] Random Value.006.Value [OUT 0]
+      -> Math.087.Value [Value_001] [IN 1]
+[080] Group Input.Fork Angle [Socket_17] [OUT 49]
+      -> Math.087.Value [IN 0]
+[081] Math.087.Value [OUT 0]
+      -> Math.067.Value [IN 0]
+[082] Group Input.Fork Length Randomness [Socket_25] [OUT 53]
+      -> Math.088.Value [Value_001] [IN 1]
+[083] Group Input.Fork Length Randomness [Socket_25] [OUT 53]
+      -> Math.089.Value [Value_001] [IN 1]
+[084] Group Input.Seed [Socket_4] [OUT 1]
+      -> Math.090.Value [IN 0]
+[085] Math.088.Value [OUT 0]
+      -> Random Value.007.Min [IN 0]
+[086] Math.089.Value [OUT 0]
+      -> Random Value.007.Max [IN 1]
+[087] Math.090.Value [OUT 0]
+      -> Random Value.007.Seed [IN 3]
+[088] Group Input.Fork Length [Socket_22] [OUT 46]
+      -> Math.091.Value [IN 0]
+[089] For Each Geometry Element Input.001.Index [OUT 0]
+      -> Random Value.007.ID [IN 2]
+[090] Random Value.007.Value [OUT 0]
+      -> Math.091.Value [Value_001] [IN 1]
+[091] Math.091.Value [OUT 0]
+      -> Curve Line.Length [IN 3]
+[092] Math.091.Value [OUT 0]
+      -> Math.075.Value [Value_001] [IN 1]
+[093] Math.091.Value [OUT 0]
+      -> Math.072.Value [Value_001] [IN 1]
+[094] Group Input.Fork Radial Randomness [Socket_26] [OUT 52]
+      -> Math.092.Value [IN 0]
+[095] Group Input.Seed [Socket_4] [OUT 1]
+      -> Math.093.Value [IN 0]
+[096] Math.092.Value [OUT 0]
+      -> Random Value.008.Min [IN 0]
+[097] Group Input.Fork Radial Randomness [Socket_26] [OUT 52]
+      -> Random Value.008.Max [IN 1]
+[098] Math.093.Value [OUT 0]
+      -> Random Value.008.Seed [IN 3]
+[099] For Each Geometry Element Input.001.Index [OUT 0]
+      -> Random Value.008.ID [IN 2]
+[100] Math.065.Value [OUT 0]
+      -> Math.094.Value [IN 0]
+[101] Random Value.008.Value [OUT 0]
+      -> Math.094.Value [Value_001] [IN 1]
+[102] Math.094.Value [OUT 0]
+      -> Math.076.Value [IN 0]
+[103] Math.094.Value [OUT 0]
+      -> Math.077.Value [IN 0]
+[104] Spline Parameter.001.Factor [OUT 0]
+      -> Combine XYZ.002.X [IN 0]
+[105] Combine XYZ.002.Vector [OUT 0]
+      -> Vector Math.Vector [IN 0]
+[106] Group Input.Fork Noise Scale [Socket_28] [OUT 55]
+      -> Vector Math.Scale [IN 3]
+[107] Vector Math.Vector [OUT 0]
+      -> Noise Texture.001.Vector [IN 0]
+[108] Math.015.Value [OUT 0]
+      -> Math.020.Value [IN 0]
+[109] For Each Geometry Element Input.001.Index [OUT 0]
+      -> Math.021.Value [IN 0]
+[110] Math.021.Value [OUT 0]
+      -> Math.020.Value [Value_001] [IN 1]
+[111] Math.020.Value [OUT 0]
+      -> Noise Texture.001.W [IN 1]
+[112] Noise Texture.001.Color [OUT 1]
+      -> Vector Math.001.Vector [IN 0]
+[113] Vector Math.001.Vector [OUT 0]
+      -> Vector Math.002.Vector [IN 0]
+[114] Spline Parameter.001.Factor [OUT 0]
+      -> Math.023.Value [IN 0]
+[115] Spline Parameter.001.Factor [OUT 0]
+      -> Math.023.Value [Value_001] [IN 1]
+[116] Math.091.Value [OUT 0]
+      -> Math.024.Value [IN 0]
+[117] Group Input.Fork Noise [Socket_27] [OUT 54]
+      -> Math.024.Value [Value_001] [IN 1]
+[118] Math.024.Value [OUT 0]
+      -> Math.025.Value [IN 0]
+[119] Math.023.Value [OUT 0]
+      -> Math.025.Value [Value_001] [IN 1]
+[120] Vector Math.002.Vector [OUT 0]
+      -> Vector Math.003.Vector [IN 0]
+[121] Math.025.Value [OUT 0]
+      -> Vector Math.003.Scale [IN 3]
+[122] Set Position.003.Geometry [OUT 0]
+      -> Set Position.001.Geometry [IN 0]
+[123] Vector Math.003.Vector [OUT 0]
+      -> Set Position.001.Offset [IN 3]
+[124] Set Position.001.Geometry [OUT 0]
+      -> Curve to Mesh.003.Curve [IN 0]
+[125] Set Position.001.Geometry [OUT 0]
+      -> Transform Geometry.005.Geometry [IN 0]
+[126] For Each Geometry Element Input.001.Fork Rotation [Input_2] [OUT 3]
+      -> Transform Geometry.005.Rotation [IN 3]
+[127] Transform Geometry.005.Geometry [OUT 0]
+      -> Transform Geometry.006.Geometry [IN 0]
+[128] For Each Geometry Element Input.001.Fork Position [Input_1] [OUT 2]
+      -> Transform Geometry.006.Translation [IN 2]
+[129] Store Named Attribute.001.Geometry [OUT 0]
+      -> For Each Geometry Element Output.001.Fork Axis [Generation_4] [IN 2]
+[130] For Each Geometry Element Output.001.Fork Axis [Generation_4] [OUT 3]
+      -> Join Geometry.001.Geometry [IN 0]
+[131] Float Curve.Value [OUT 0]
+      -> Math.095.Value [IN 0]
+[132] Group Input.Radius [Socket_2] [OUT 5]
+      -> Math.095.Value [Value_001] [IN 1]
+[133] Resample Curve.Curve [OUT 0]
+      -> Store Named Attribute.Geometry [IN 0]
+[134] Store Named Attribute.Geometry [OUT 0]
+      -> Join Geometry.001.Geometry [IN 0]
+[135] Transform Geometry.006.Geometry [OUT 0]
+      -> Store Named Attribute.001.Geometry [IN 0]
+[136] Math.082.Value [OUT 0]
+      -> Store Named Attribute.001.Value [IN 3]
+[137] Group Input.Seed [Socket_4] [OUT 1]
+      -> Group.Seed [Socket_0] [IN 0]
+[138] Group Input.Length Randomness [Socket_8] [OUT 26]
+      -> Group.Length Randomness [Socket_1] [IN 1]
+[139] Group Input.Angle Randomness [Socket_11] [OUT 27]
+      -> Group.Angle Randomness [Socket_2] [IN 2]
+[140] Join Geometry.001.Geometry [OUT 0]
+      -> Group.Geometry [Socket_3] [IN 3]
+[141] Group Input.Segments Count [Socket_3] [OUT 4]
+      -> Group.Segments Count [Socket_6] [IN 4]
+[142] Group Input.Branch Start [Socket_9] [OUT 18]
+      -> Group.Branch Start [Socket_8] [IN 6]
+[143] Group Input.Branch End [Socket_10] [OUT 19]
+      -> Group.Branch End [Socket_9] [IN 7]
+[144] Group Input.Branch Density [Socket_5] [OUT 22]
+      -> Group.Branch Density [Socket_10] [IN 8]
+[145] Group Input.Branch Radius Ratio [Socket_12] [OUT 30]
+      -> Group.Branch Radius Ratio [Socket_11] [IN 10]
+[146] Group Input.Branch Length [Socket_7] [OUT 21]
+      -> Group.Branch Length [Socket_12] [IN 11]
+[147] Group Input.Branch Angle [Socket_6] [OUT 20]
+      -> Group.Branch Angle [Socket_13] [IN 12]
+[148] Group.Child Geometry [Socket_4] [OUT 0]
+      -> Join Geometry.Geometry [IN 0]
+[149] Group.001.Child Geometry [Socket_4] [OUT 0]
+      -> Join Geometry.Geometry [IN 0]
+[150] Group.Child Axes [Socket_5] [OUT 1]
+      -> Group.001.Geometry [Socket_3] [IN 3]
+[151] Math.002.Value [OUT 0]
+      -> Math.001.Value [IN 0]
+[152] Group Input.Branch Length [Socket_7] [OUT 21]
+      -> Math.003.Value [IN 0]
+[153] Math.003.Value [OUT 0]
+      -> Group.001.Branch Length [Socket_12] [IN 11]
+[154] Group Input.Branch Count Decay [Socket_30] [OUT 28]
+      -> Math.002.Value [Value_001] [IN 1]
+[155] Group Input.Branch Length Decay [Socket_31] [OUT 29]
+      -> Math.003.Value [Value_001] [IN 1]
+[156] Group Input.Length Randomness [Socket_8] [OUT 26]
+      -> Group.001.Length Randomness [Socket_1] [IN 1]
+[157] Group Input.Angle Randomness [Socket_11] [OUT 27]
+      -> Group.001.Angle Randomness [Socket_2] [IN 2]
+[158] Group Input.Branch Density [Socket_5] [OUT 22]
+      -> Group.001.Branch Density [Socket_10] [IN 8]
+[159] Group Input.Seed [Socket_4] [OUT 1]
+      -> Math.004.Value [IN 0]
+[160] Math.004.Value [OUT 0]
+      -> Group.001.Seed [Socket_0] [IN 0]
+[161] Compare.Result [OUT 0]
+      -> Math.005.Value [Value_001] [IN 1]
+[162] Math.001.Value [OUT 0]
+      -> Math.005.Value [IN 0]
+[163] Compare.001.Result [OUT 0]
+      -> Math.006.Value [IN 0]
+[164] Math.006.Value [OUT 0]
+      -> Group.Branch Spawn Count [Socket_7] [IN 5]
+[165] Math.001.Value [OUT 0]
+      -> Math.007.Value [IN 0]
+[166] Group Input.Branch Count Decay [Socket_30] [OUT 28]
+      -> Math.007.Value [Value_001] [IN 1]
+[167] Math.007.Value [OUT 0]
+      -> Math.008.Value [IN 0]
+[168] Group.001.Child Axes [Socket_5] [OUT 1]
+      -> Group.002.Geometry [Socket_3] [IN 3]
+[169] Group.002.Child Geometry [Socket_4] [OUT 0]
+      -> Join Geometry.Geometry [IN 0]
+[170] Math.008.Value [OUT 0]
+      -> Math.009.Value [Value_001] [IN 1]
+[171] Compare.002.Result [OUT 0]
+      -> Math.009.Value [IN 0]
+[172] Group Input.Seed [Socket_4] [OUT 1]
+      -> Math.010.Value [IN 0]
+[173] Math.010.Value [OUT 0]
+      -> Group.002.Seed [Socket_0] [IN 0]
+[174] Math.003.Value [OUT 0]
+      -> Math.011.Value [IN 0]
+[175] Group Input.Branch Length Decay [Socket_31] [OUT 29]
+      -> Math.011.Value [Value_001] [IN 1]
+[176] Math.011.Value [OUT 0]
+      -> Group.002.Branch Length [Socket_12] [IN 11]
+[177] Group Input.Branch Radius Ratio [Socket_12] [OUT 30]
+      -> Math.012.Value [IN 0]
+[178] Group Input.Branch Radius Ratio Decay [Socket_33] [OUT 31]
+      -> Math.012.Value [Value_001] [IN 1]
+[179] Math.012.Value [OUT 0]
+      -> Group.001.Branch Radius Ratio [Socket_11] [IN 10]
+[180] Math.012.Value [OUT 0]
+      -> Math.013.Value [IN 0]
+[181] Group Input.Branch Angle [Socket_6] [OUT 20]
+      -> Math.014.Value [IN 0]
+[182] Group Input.Branch Angle Evolution [Socket_34] [OUT 32]
+      -> Math.014.Value [Value_001] [IN 1]
+[183] Clamp.Result [OUT 0]
+      -> Math.026.Value [IN 0]
+[184] Group Input.Branch Angle Evolution [Socket_34] [OUT 32]
+      -> Math.026.Value [Value_001] [IN 1]
+[185] Clamp.001.Result [OUT 0]
+      -> Group.002.Branch Angle [Socket_13] [IN 12]
+[186] Group Input.Branch Radius Ratio Decay [Socket_33] [OUT 31]
+      -> Math.013.Value [Value_001] [IN 1]
+[187] Math.013.Value [OUT 0]
+      -> Group.002.Branch Radius Ratio [Socket_11] [IN 10]
+[188] Math.014.Value [OUT 0]
+      -> Clamp.Value [IN 0]
+[189] Clamp.Result [OUT 0]
+      -> Group.001.Branch Angle [Socket_13] [IN 12]
+[190] Math.026.Value [OUT 0]
+      -> Clamp.001.Value [IN 0]
+[191] Group Input.Branch Gravity [Socket_24] [OUT 25]
+      -> Group.Branch Gravity [Socket_16] [IN 15]
+[192] Group Input.Branch Gravity [Socket_24] [OUT 25]
+      -> Group.001.Branch Gravity [Socket_16] [IN 15]
+[193] Group Input.Branch Gravity [Socket_24] [OUT 25]
+      -> Group.002.Branch Gravity [Socket_16] [IN 15]
+[194] Group Input.Branch Lateral Bias [Socket_23] [OUT 24]
+      -> Group.Branch Lateral Bias [Socket_15] [IN 14]
+[195] Group Input.Branch Lateral Bias [Socket_23] [OUT 24]
+      -> Group.001.Branch Lateral Bias [Socket_15] [IN 14]
+[196] Group Input.Branch Lateral Bias [Socket_23] [OUT 24]
+      -> Group.002.Branch Lateral Bias [Socket_15] [IN 14]
+[197] Group Input.Branch Curvature [Socket_13] [OUT 23]
+      -> Group.Branch Curvature [Socket_14] [IN 13]
+[198] Group Input.Branch Curvature [Socket_13] [OUT 23]
+      -> Group.001.Branch Curvature [Socket_14] [IN 13]
+[199] Group Input.Branch Curvature [Socket_13] [OUT 23]
+      -> Group.002.Branch Curvature [Socket_14] [IN 13]
+[200] Group Input.Segments Count [Socket_3] [OUT 4]
+      -> Group.001.Segments Count [Socket_6] [IN 4]
+[201] Group Input.Segments Count [Socket_3] [OUT 4]
+      -> Group.002.Segments Count [Socket_6] [IN 4]
+[202] Group Input.Branch Density [Socket_5] [OUT 22]
+      -> Group.002.Branch Density [Socket_10] [IN 8]
+[203] Group Input.Length Randomness [Socket_8] [OUT 26]
+      -> Group.002.Length Randomness [Socket_1] [IN 1]
+[204] Group Input.Angle Randomness [Socket_11] [OUT 27]
+      -> Group.002.Angle Randomness [Socket_2] [IN 2]
+[205] Group Input.Branch Count Decay [Socket_30] [OUT 28]
+      -> Math.027.Value [IN 0]
+[206] Math.008.Value [OUT 0]
+      -> Math.027.Value [Value_001] [IN 1]
+[207] Math.027.Value [OUT 0]
+      -> Math.028.Value [IN 0]
+[208] Compare.003.Result [OUT 0]
+      -> Math.029.Value [IN 0]
+[209] Math.028.Value [OUT 0]
+      -> Math.029.Value [Value_001] [IN 1]
+[210] Math.011.Value [OUT 0]
+      -> Math.030.Value [IN 0]
+[211] Group Input.Branch Length Decay [Socket_31] [OUT 29]
+      -> Math.030.Value [Value_001] [IN 1]
+[212] Math.030.Value [OUT 0]
+      -> Group.003.Branch Length [Socket_12] [IN 11]
+[213] Math.013.Value [OUT 0]
+      -> Math.031.Value [IN 0]
+[214] Group Input.Branch Radius Ratio Decay [Socket_33] [OUT 31]
+      -> Math.031.Value [Value_001] [IN 1]
+[215] Math.031.Value [OUT 0]
+      -> Group.003.Branch Radius Ratio [Socket_11] [IN 10]
+[216] Clamp.001.Result [OUT 0]
+      -> Math.032.Value [IN 0]
+[217] Group Input.Branch Angle Evolution [Socket_34] [OUT 32]
+      -> Math.032.Value [Value_001] [IN 1]
+[218] Math.032.Value [OUT 0]
+      -> Clamp.002.Value [IN 0]
+[219] Clamp.002.Result [OUT 0]
+      -> Group.003.Branch Angle [Socket_13] [IN 12]
+[220] Group Input.Seed [Socket_4] [OUT 1]
+      -> Math.033.Value [IN 0]
+[221] Math.033.Value [OUT 0]
+      -> Group.003.Seed [Socket_0] [IN 0]
+[222] Group.003.Child Geometry [Socket_4] [OUT 0]
+      -> Join Geometry.Geometry [IN 0]
+[223] Group Input.Segments Count [Socket_3] [OUT 4]
+      -> Group.003.Segments Count [Socket_6] [IN 4]
+[224] Group Input.Branch Density [Socket_5] [OUT 22]
+      -> Group.003.Branch Density [Socket_10] [IN 8]
+[225] Group Input.Length Randomness [Socket_8] [OUT 26]
+      -> Group.003.Length Randomness [Socket_1] [IN 1]
+[226] Group Input.Angle Randomness [Socket_11] [OUT 27]
+      -> Group.003.Angle Randomness [Socket_2] [IN 2]
+[227] Group Input.Branch Curvature [Socket_13] [OUT 23]
+      -> Group.003.Branch Curvature [Socket_14] [IN 13]
+[228] Group Input.Branch Lateral Bias [Socket_23] [OUT 24]
+      -> Group.003.Branch Lateral Bias [Socket_15] [IN 14]
+[229] Group Input.Branch Gravity [Socket_24] [OUT 25]
+      -> Group.003.Branch Gravity [Socket_16] [IN 15]
+[230] Group.002.Child Axes [Socket_5] [OUT 1]
+      -> Group.003.Geometry [Socket_3] [IN 3]
+[231] Group Input.Branch Start Evolution [Socket_35] [OUT 33]
+      -> Math.034.Value [Value_001] [IN 1]
+[232] Group Input.Branch Start [Socket_9] [OUT 18]
+      -> Math.034.Value [IN 0]
+[233] Math.034.Value [OUT 0]
+      -> Clamp.003.Value [IN 0]
+[234] Clamp.003.Result [OUT 0]
+      -> Group.001.Branch Start [Socket_8] [IN 6]
+[235] Clamp.003.Result [OUT 0]
+      -> Math.035.Value [IN 0]
+[236] Group Input.Branch Start Evolution [Socket_35] [OUT 33]
+      -> Math.035.Value [Value_001] [IN 1]
+[237] Math.035.Value [OUT 0]
+      -> Clamp.004.Value [IN 0]
+[238] Clamp.004.Result [OUT 0]
+      -> Group.002.Branch Start [Socket_8] [IN 6]
+[239] Clamp.004.Result [OUT 0]
+      -> Math.036.Value [IN 0]
+[240] Math.036.Value [OUT 0]
+      -> Clamp.005.Value [IN 0]
+[241] Clamp.005.Result [OUT 0]
+      -> Group.003.Branch Start [Socket_8] [IN 6]
+[242] Math.037.Value [OUT 0]
+      -> Clamp.006.Value [IN 0]
+[243] Group Input.Branch End [Socket_10] [OUT 19]
+      -> Math.037.Value [IN 0]
+[244] Group Input.Branch End Evolution [Socket_36] [OUT 34]
+      -> Math.037.Value [Value_001] [IN 1]
+[245] Clamp.006.Result [OUT 0]
+      -> Group.001.Branch End [Socket_9] [IN 7]
+[246] Math.038.Value [OUT 0]
+      -> Clamp.007.Value [IN 0]
+[247] Clamp.006.Result [OUT 0]
+      -> Math.038.Value [IN 0]
+[248] Group Input.Branch End Evolution [Socket_36] [OUT 34]
+      -> Math.038.Value [Value_001] [IN 1]
+[249] Clamp.007.Result [OUT 0]
+      -> Group.002.Branch End [Socket_9] [IN 7]
+[250] Math.039.Value [OUT 0]
+      -> Clamp.008.Value [IN 0]
+[251] Clamp.007.Result [OUT 0]
+      -> Math.039.Value [IN 0]
+[252] Group Input.Branch End Evolution [Socket_36] [OUT 34]
+      -> Math.039.Value [Value_001] [IN 1]
+[253] Clamp.008.Result [OUT 0]
+      -> Group.003.Branch End [Socket_9] [IN 7]
+[254] Group Input.Branch Start Evolution [Socket_35] [OUT 33]
+      -> Math.036.Value [Value_001] [IN 1]
+[255] Clamp.006.Result [OUT 0]
+      -> Compare.004.A [IN 0]
+[256] Clamp.003.Result [OUT 0]
+      -> Compare.004.B [IN 1]
+[257] Compare.004.Result [OUT 0]
+      -> Switch.Switch [IN 0]
+[258] Math.005.Value [OUT 0]
+      -> Switch.True [IN 2]
+[259] Switch.Output [OUT 0]
+      -> Group.001.Branch Spawn Count [Socket_7] [IN 5]
+[260] Clamp.007.Result [OUT 0]
+      -> Compare.005.A [IN 0]
+[261] Clamp.004.Result [OUT 0]
+      -> Compare.005.B [IN 1]
+[262] Clamp.008.Result [OUT 0]
+      -> Compare.006.A [IN 0]
+[263] Clamp.005.Result [OUT 0]
+      -> Compare.006.B [IN 1]
+[264] Compare.005.Result [OUT 0]
+      -> Switch.001.Switch [IN 0]
+[265] Compare.006.Result [OUT 0]
+      -> Switch.002.Switch [IN 0]
+[266] Math.029.Value [OUT 0]
+      -> Switch.002.True [IN 2]
+[267] Switch.002.Output [OUT 0]
+      -> Group.003.Branch Spawn Count [Socket_7] [IN 5]
+[268] Math.009.Value [OUT 0]
+      -> Switch.001.True [IN 2]
+[269] Switch.001.Output [OUT 0]
+      -> Group.002.Branch Spawn Count [Socket_7] [IN 5]
+[270] Group Input.Forks [Socket_44] [OUT 44]
+      -> Math.064.Value [Value_001] [IN 1]
+[271] Spline Parameter.Factor [OUT 0]
+      -> Map Range.Value [IN 0]
+[272] Group Input.Base Flare Height [Socket_47] [OUT 8]
+      -> Map Range.From Max [IN 2]
+[273] Map Range.Result [OUT 0]
+      -> Math.040.Value [IN 0]
+[274] Group Input.Base Flare [Socket_46] [OUT 7]
+      -> Math.040.Value [Value_001] [IN 1]
+[275] Math.040.Value [OUT 0]
+      -> Math.041.Value [Value_001] [IN 1]
+[276] Math.041.Value [OUT 0]
+      -> Math.042.Value [Value_001] [IN 1]
+[277] Math.095.Value [OUT 0]
+      -> Math.042.Value [IN 0]
+[278] Float Curve.Value [OUT 0]
+      -> Math.043.Value [IN 0]
+[279] Math.041.Value [OUT 0]
+      -> Math.043.Value [Value_001] [IN 1]
+[280] Math.043.Value [OUT 0]
+      -> Curve to Mesh.Scale [IN 2]
+[281] Math.042.Value [OUT 0]
+      -> Store Named Attribute.Value [IN 3]
+[282] Map Range.001.Result [OUT 0]
+      -> Math.044.Value [IN 0]
+[283] Math.044.Value [OUT 0]
+      -> Math.045.Value [Value_001] [IN 1]
+[284] Math.045.Value [OUT 0]
+      -> Math.046.Value [Value_001] [IN 1]
+[285] Group Input.Base Flare Height [Socket_47] [OUT 8]
+      -> Map Range.001.From Max [IN 2]
+[286] Math.022.Value [OUT 0]
+      -> Map Range.001.Value [IN 0]
+[287] Group Input.Base Flare [Socket_46] [OUT 7]
+      -> Math.044.Value [Value_001] [IN 1]
+[288] Math.080.Value [OUT 0]
+      -> Math.046.Value [IN 0]
+[289] Math.046.Value [OUT 0]
+      -> For Each Geometry Element Input.001.Parent Radius [Input_3] [IN 4]
+[290] Curve to Points.Points [OUT 0]
+      -> Group.004.Points [Socket_0] [IN 0]
+[291] Position.Position [OUT 0]
+      -> Group.004.Position [Socket_1] [IN 1]
+[292] Curve to Points.Tangent [OUT 1]
+      -> Group.004.Tangent [Socket_2] [IN 2]
+[293] Group Input.Root Count [Socket_51] [OUT 10]
+      -> Group.004.Root Count [Socket_3] [IN 3]
+[294] Group Input.Roots [Socket_49] [OUT 9]
+      -> Group.004.Roots [Socket_4] [IN 4]
+[295] Group Input.Root Depth [Socket_53] [OUT 12]
+      -> Group.004.Root Depth [Socket_6] [IN 5]
+[296] Group Input.Root Spread Randomness [Socket_54] [OUT 13]
+      -> Group.004.Root Spread Randomness [Socket_7] [IN 6]
+[297] Group Input.Seed [Socket_4] [OUT 1]
+      -> Group.004.Seed [Socket_8] [IN 7]
+[298] Group Input.Root Length Randomness [Socket_55] [OUT 14]
+      -> Group.004.Root Length Randomness [Socket_9] [IN 8]
+[299] Group Input.Root Length [Socket_52] [OUT 11]
+      -> Group.004.Root Length [Socket_10] [IN 9]
+[300] Group Input.Root Curvature [Socket_56] [OUT 15]
+      -> Group.004.Root Curvature [Socket_11] [IN 10]
+[301] Group Input.Radius [Socket_2] [OUT 5]
+      -> Group.004.Radius [Socket_12] [IN 11]
+[302] Group Input.Base Flare [Socket_46] [OUT 7]
+      -> Group.004.Base Flare [Socket_13] [IN 12]
+[303] Group.004.Mesh [Socket_5] [OUT 0]
+      -> Join Geometry.Geometry [IN 0]
+[304] Group.004.Instances [Socket_14] [OUT 1]
+      -> Join Geometry.Geometry [IN 0]
+[305] Group.Child Axes [Socket_5] [OUT 1]
+      -> Store Named Attribute.002.Geometry [IN 0]
+[306] Group.001.Child Axes [Socket_5] [OUT 1]
+      -> Store Named Attribute.003.Geometry [IN 0]
+[307] Group.002.Child Axes [Socket_5] [OUT 1]
+      -> Store Named Attribute.004.Geometry [IN 0]
+[308] Group.003.Child Axes [Socket_5] [OUT 1]
+      -> Store Named Attribute.005.Geometry [IN 0]
+[309] Store Named Attribute.004.Geometry [OUT 0]
+      -> Group.005.Order 3 Axes [Socket_0] [IN 2]
+[310] Store Named Attribute.002.Geometry [OUT 0]
+      -> Group.005.Order 1 Axes [Socket_1] [IN 0]
+[311] Store Named Attribute.003.Geometry [OUT 0]
+      -> Group.005.Order 2 Axes [Socket_2] [IN 1]
+[312] Store Named Attribute.005.Geometry [OUT 0]
+      -> Group.005.Order 4 Axes [Socket_3] [IN 3]
+[313] Group Input.Foliage Spacing [Socket_63] [OUT 36]
+      -> Group.005.Foliage Spacing [Socket_4] [IN 4]
+[314] Group Input.Foliage Start [Socket_62] [OUT 35]
+      -> Group.005.Foliage Start [Socket_7] [IN 6]
+[315] Group Input.Seed [Socket_4] [OUT 1]
+      -> Group.005.Seed [Socket_8] [IN 7]
+[316] Group Input.Foliage Density [Socket_61] [OUT 37]
+      -> Group.005.Foliage Density [Socket_9] [IN 8]
+[317] Group Input.Opposite Leaves [Socket_57] [OUT 3]
+      -> Group.005.Opposite Leaves [Socket_11] [IN 9]
+[318] Group Input.Leaf Angle Randomness [Socket_58] [OUT 39]
+      -> Group.005.Leaf Angle Randomness [Socket_12] [IN 10]
+[319] Group Input.Leaf Plane Randomness [Socket_60] [OUT 40]
+      -> Group.005.Leaf Plane Randomness [Socket_13] [IN 11]
+[320] Group Input.Leaf Size [Socket_64] [OUT 38]
+      -> Group.005.Leaf Size [Socket_14] [IN 12]
+[321] Group Input.Custom Leaf [Socket_67] [OUT 42]
+      -> Group.005.Custom Leaf [Socket_15] [IN 13]
+[322] Group Input.Use Custom Leaf [Socket_66] [OUT 41]
+      -> Group.005.Use Custom Leaf [Socket_16] [IN 14]
+[323] Set Material.001.Geometry [OUT 0]
+      -> Join Geometry.002.Geometry [IN 0]
+[324] For Each Geometry Element Output.001.Geometry [Generation_0] [OUT 2]
+      -> Join Geometry.Geometry [IN 0]
+[325] Join Geometry.002.Geometry [OUT 0]
+      -> Group Output.Geometry [Socket_1] [IN 0]
+[326] Set Material.Geometry [OUT 0]
+      -> Join Geometry.002.Geometry [IN 0]
+[327] Join Geometry.Geometry [OUT 0]
+      -> Set Material.Geometry [IN 0]
+[328] Group Input.Wood Material [Socket_69] [OUT 6]
+      -> Set Material.Material [IN 2]
+[329] Group.005.Instances [Socket_5] [OUT 0]
+      -> Set Material.001.Geometry [IN 0]
+[330] Group Input.Leaf Material [Socket_68] [OUT 43]
+      -> Set Material.001.Material [IN 2]
+[331] Group Input.Branch Levels [Socket_32] [OUT 16]
+      -> Math.047.Value [IN 0]
+[332] Group Input.Preview Mode [Socket_70] [OUT 2]
+      -> Switch.003.Switch [IN 0]
+[333] Math.047.Value [OUT 0]
+      -> Switch.003.True [IN 2]
+[334] Group Input.Branch Spawn Count [Socket_29] [OUT 17]
+      -> Math.048.Value [IN 0]
+[335] Math.048.Value [OUT 0]
+      -> Switch.004.True [IN 2]
+[336] Group Input.Preview Mode [Socket_70] [OUT 2]
+      -> Switch.004.Switch [IN 0]
+[337] Switch.003.Output [OUT 0]
+      -> Compare.002.A [IN 0]
+[338] Switch.003.Output [OUT 0]
+      -> Compare.A [IN 0]
+[339] Switch.003.Output [OUT 0]
+      -> Compare.001.A [IN 0]
+[340] Switch.003.Output [OUT 0]
+      -> Compare.003.A [IN 0]
+[341] Switch.003.Output [OUT 0]
+      -> Group.005.Branch Levels [Socket_6] [IN 5]
+[342] Switch.004.Output [OUT 0]
+      -> Math.006.Value [Value_001] [IN 1]
+[343] Switch.004.Output [OUT 0]
+      -> Math.002.Value [IN 0]
+[344] Group Input.Preview Mode [Socket_70] [OUT 2]
+      -> Switch.005.Switch [IN 0]
+[345] Switch.005.Output [OUT 0]
+      -> Group.Branch Resolution [Socket_17] [IN 9]
+[346] Switch.005.Output [OUT 0]
+      -> Group.001.Branch Resolution [Socket_17] [IN 9]
+[347] Switch.005.Output [OUT 0]
+      -> Group.002.Branch Resolution [Socket_17] [IN 9]
+[348] Switch.005.Output [OUT 0]
+      -> Group.003.Branch Resolution [Socket_17] [IN 9]
+[349] Group Input.Branch Levels [Socket_32] [OUT 16]
+      -> Switch.003.False [IN 1]
+[350] Group Input.Branch Spawn Count [Socket_29] [OUT 17]
+      -> Switch.004.False [IN 1]
+
+================================================================================
+NODE ORGANIZATION
+================================================================================
+Group Input | parent=None | location=(-2542.6, -1896.6)
+Group Output | parent=None | location=(3977.8, -1812.0)
+Resample Curve | parent=None | location=(-1638.8, -1212.2)
+Curve to Mesh | parent=None | location=(-949.9, -1237.6)
+Curve Circle | parent=None | location=(-1176.1, -1387.2)
+Spline Parameter | parent=None | location=(-1659.9, -1053.8)
+Float Curve | parent=None | location=(-1469.1, -1072.2)
+Curve to Points | parent=None | location=(-1233.9, -2217.4)
+Join Geometry | parent=None | location=(3275.3, -1800.9)
+Math | parent=None | location=(-1538.3, -844.0)
+Random Value.001 | parent=None | location=(-1538.7, -668.5)
+Math.015 | parent=None | location=(-1701.9, -848.9)
+Math.016 | parent=None | location=(-1367.1, -677.5)
+Math.017 | parent=None | location=(-1191.4, -687.6)
+Position | parent=None | location=(-1191.5, -625.4)
+Sample Index | parent=None | location=(-942.5, -463.9)
+Math.018 | parent=None | location=(-1539.5, -502.0)
+Math.019 | parent=None | location=(-937.5, -882.1)
+Math.022 | parent=None | location=(-1375.3, -844.8)
+Float Curve.003 | parent=None | location=(-1192.9, -1030.9)
+For Each Geometry Element Input.001 | parent=None | location=(-591.6, -697.8)
+For Each Geometry Element Output.001 | parent=None | location=(1185.3, -881.7)
+Curve Line | parent=None | location=(-206.4, -734.0)
+Points.001 | parent=None | location=(-779.8, -532.5)
+Math.064 | parent=None | location=(-1188.0, -462.1)
+Math.065 | parent=None | location=(-228.5, -569.6)
+Resample Curve.001 | parent=None | location=(11.4, -887.1)
+Spline Parameter.001 | parent=None | location=(-397.6, -543.3)
+Math.066 | parent=None | location=(-394.6, -660.1)
+Math.067 | parent=None | location=(-379.4, -353.7)
+Math.068 | parent=None | location=(-226.7, -396.5)
+Math.069 | parent=None | location=(-56.2, -274.4)
+Math.070 | parent=None | location=(-47.6, -58.0)
+Math.071 | parent=None | location=(153.0, -47.0)
+Math.072 | parent=None | location=(157.3, -209.0)
+Math.073 | parent=None | location=(-32.6, -413.8)
+Math.074 | parent=None | location=(159.6, -363.1)
+Math.075 | parent=None | location=(425.9, -620.7)
+Math.076 | parent=None | location=(156.5, -531.4)
+Math.077 | parent=None | location=(159.7, -666.6)
+Math.078 | parent=None | location=(427.2, -303.2)
+Math.079 | parent=None | location=(427.4, -461.3)
+Combine XYZ.005 | parent=None | location=(679.8, -417.4)
+Set Position.003 | parent=None | location=(212.1, -838.6)
+Transform Geometry.003 | parent=None | location=(729.7, -776.8)
+Transform Geometry.004 | parent=None | location=(939.2, -764.9)
+Sample Index.006 | parent=None | location=(-938.4, -674.0)
+Align Rotation to Vector | parent=None | location=(-774.3, -729.4)
+Math.080 | parent=None | location=(-772.3, -893.4)
+Math.084 | parent=None | location=(-204.4, -1012.1)
+Curve Circle.001 | parent=None | location=(214.2, -1028.9)
+Curve to Mesh.003 | parent=None | location=(530.7, -786.4)
+Math.081 | parent=None | location=(-205.7, -1169.2)
+Math.082 | parent=None | location=(-16.1, -1018.0)
+Math.083 | parent=None | location=(-581.5, -315.0)
+Random Value.006 | parent=None | location=(-372.7, -178.4)
+Math.086 | parent=None | location=(-753.7, -346.8)
+Math.087 | parent=None | location=(-217.3, -217.4)
+Math.088 | parent=None | location=(-771.5, -1051.8)
+Math.089 | parent=None | location=(-771.5, -1212.6)
+Math.090 | parent=None | location=(-772.7, -1383.0)
+Random Value.007 | parent=None | location=(-552.2, -962.4)
+Math.091 | parent=None | location=(-389.7, -827.1)
+Math.092 | parent=None | location=(-1178.9, -1064.5)
+Math.093 | parent=None | location=(-1180.8, -1221.7)
+Random Value.008 | parent=None | location=(-937.6, -1050.8)
+Math.094 | parent=None | location=(-27.0, -647.8)
+Combine XYZ.002 | parent=None | location=(-569.1, -1393.1)
+Vector Math | parent=None | location=(-400.7, -1391.1)
+Noise Texture.001 | parent=None | location=(-212.0, -1330.0)
+Math.020 | parent=None | location=(-400.0, -1527.6)
+Math.021 | parent=None | location=(-596.4, -1558.8)
+Vector Math.001 | parent=None | location=(-17.0, -1177.8)
+Vector Math.002 | parent=None | location=(156.9, -1186.2)
+Math.023 | parent=None | location=(-25.3, -1537.1)
+Math.024 | parent=None | location=(-18.0, -1375.0)
+Math.025 | parent=None | location=(155.7, -1382.3)
+Vector Math.003 | parent=None | location=(321.0, -1209.3)
+Set Position.001 | parent=None | location=(398.4, -990.1)
+Transform Geometry.005 | parent=None | location=(579.4, -1079.7)
+Transform Geometry.006 | parent=None | location=(787.7, -1048.0)
+Join Geometry.001 | parent=None | location=(1385.1, -1373.9)
+Store Named Attribute | parent=None | location=(-592.3, -481.7)
+Math.095 | parent=None | location=(-1176.2, -851.5)
+Store Named Attribute.001 | parent=None | location=(965.0, -1053.1)
+Frame | parent=None | location=(1324.0, -1902.0)
+Group | parent='Frame' | location=(29.6, -83.2)
+Group.001 | parent='Frame' | location=(302.2, -83.7)
+Math.001 | parent=None | location=(840.4, -1570.4)
+Math.002 | parent=None | location=(636.1, -1568.0)
+Math.003 | parent=None | location=(837.3, -2177.5)
+Math.004 | parent=None | location=(838.9, -1857.0)
+Compare | parent=None | location=(839.6, -1703.9)
+Math.005 | parent=None | location=(1114.8, -1604.2)
+Compare.001 | parent=None | location=(597.7, -2043.5)
+Math.006 | parent=None | location=(837.0, -2023.9)
+Math.007 | parent=None | location=(1114.4, -1760.0)
+Math.008 | parent=None | location=(1316.7, -1672.3)
+Group.002 | parent='Frame' | location=(595.3, -76.1)
+Math.009 | parent=None | location=(1501.4, -1571.0)
+Compare.002 | parent=None | location=(1317.1, -1515.6)
+Math.010 | parent=None | location=(595.8, -1887.6)
+Math.011 | parent=None | location=(1034.0, -2196.7)
+Math.012 | parent=None | location=(837.2, -2332.1)
+Math.013 | parent=None | location=(1033.9, -2353.2)
+Math.014 | parent=None | location=(597.1, -2358.4)
+Math.026 | parent=None | location=(1186.1, -2354.4)
+Clamp | parent=None | location=(838.6, -2488.0)
+Clamp.001 | parent=None | location=(1413.5, -2451.7)
+Group.003 | parent='Frame' | location=(860.3, -70.1)
+Compare.003 | parent=None | location=(1676.8, -1564.6)
+Math.027 | parent=None | location=(1502.3, -1726.5)
+Math.028 | parent=None | location=(1676.0, -1719.8)
+Math.029 | parent=None | location=(1862.8, -1597.7)
+Math.030 | parent=None | location=(1624.9, -2432.1)
+Math.031 | parent=None | location=(1587.9, -2620.7)
+Math.032 | parent=None | location=(1827.5, -2470.5)
+Clamp.002 | parent=None | location=(2018.7, -2446.7)
+Math.033 | parent=None | location=(597.2, -2198.5)
+Math.034 | parent=None | location=(0.5, -2472.8)
+Clamp.003 | parent=None | location=(170.9, -2472.3)
+Math.035 | parent=None | location=(598.6, -2517.1)
+Clamp.004 | parent=None | location=(839.3, -2662.3)
+Math.036 | parent=None | location=(1034.3, -2515.0)
+Clamp.005 | parent=None | location=(1242.4, -2515.6)
+Math.037 | parent=None | location=(0.5, -2636.8)
+Clamp.006 | parent=None | location=(170.9, -2636.3)
+Math.038 | parent=None | location=(400.4, -2665.3)
+Clamp.007 | parent=None | location=(590.6, -2675.7)
+Math.039 | parent=None | location=(1033.0, -2675.0)
+Clamp.008 | parent=None | location=(1241.1, -2675.6)
+Compare.004 | parent=None | location=(401.8, -2506.8)
+Switch | parent=None | location=(1316.8, -1806.5)
+Compare.005 | parent=None | location=(1420.7, -2621.0)
+Compare.006 | parent=None | location=(1821.6, -2637.6)
+Switch.001 | parent=None | location=(1851.6, -1759.3)
+Switch.002 | parent=None | location=(2026.0, -1768.5)
+Map Range | parent=None | location=(-1553.2, -1680.8)
+Math.040 | parent=None | location=(-1357.9, -1683.0)
+Math.041 | parent=None | location=(-1170.8, -1679.5)
+Math.042 | parent=None | location=(-954.1, -1400.8)
+Math.043 | parent=None | location=(-1177.4, -1522.1)
+Map Range.001 | parent=None | location=(-1529.4, -1449.3)
+Math.044 | parent=None | location=(-1344.1, -1519.0)
+Math.045 | parent=None | location=(-972.2, -1582.8)
+Math.046 | parent=None | location=(-770.3, -1550.8)
+Frame.001 | parent=None | location=(765.0, -2925.0)
+Group.004 | parent='Frame.001' | location=(29.7, -56.0)
+Store Named Attribute.002 | parent=None | location=(2392.8, -2064.1)
+Store Named Attribute.003 | parent=None | location=(2572.8, -2063.0)
+Store Named Attribute.004 | parent=None | location=(2393.4, -2241.2)
+Store Named Attribute.005 | parent=None | location=(2571.2, -2240.1)
+Frame.002 | parent=None | location=(3061.0, -2080.0)
+Group.005 | parent='Frame.002' | location=(29.7, -75.5)
+Join Geometry.002 | parent=None | location=(3717.6, -1828.5)
+Set Material | parent=None | location=(3455.0, -1804.7)
+Set Material.001 | parent=None | location=(3452.3, -1977.4)
+Math.047 | parent=None | location=(401.1, -1745.0)
+Switch.003 | parent=None | location=(595.6, -1730.8)
+Math.048 | parent=None | location=(201.6, -2006.7)
+Switch.004 | parent=None | location=(383.5, -2008.6)
+Switch.005 | parent=None | location=(1135.3, -1961.0)
