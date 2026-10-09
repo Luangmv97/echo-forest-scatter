@@ -1,9 +1,16 @@
 # ECHO Forest Scatter — Demo
 
-A short demonstration is being prepared for ECHO Forest Scatter v0.1.
+This directory contains a recorded demonstration of ECHO Forest Scatter v0.1, a procedural environment-art workflow developed using Blender Geometry Nodes.
 
-The demo will focus on the artist-facing workflow rather than exposing the entire production graph. Planned demonstrations include deterministic Seed changes, density art direction, scale variation, maximum-slope filtering, optional boundary control, and painted density.
+**[Watch the recorded demonstration](ECHOForectScatter_Demo.mp4)**
 
-It will also introduce TreeBase as the procedural vegetation foundation from which the forest-scatter workflow evolved.
+The demonstration accompanies the technical documentation and showcases the current procedural environment system.
 
-The final demo media will be added here when the presentation capture is complete.
+The workflow combines two complementary components:
+
+- **TreeBase:** Artist-directed procedural tree generation with configurable branching, forks, roots, and foliage.
+- **ECHO Forest Scatter:** Collection-driven vegetation placement with terrain-aware controls, density variation, deterministic seeds, and editable distribution boundaries.
+
+For additional technical details, see the [Technical Overview](../docs/technical-overview.md) or visit its section on my [Portfolio](https://angelmv97.itch.io/luangs-portfolio).
+
+**Status:** Work in Progress — v0.1.
