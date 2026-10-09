@@ -88,9 +88,16 @@ The current v0.1 focuses on reliable procedural generation and artist-facing pla
 
 ## Repository contents
 
-This repository documents the public-facing development of ECHO Forest Scatter and TreeBase. Technical breakdowns, node-graph captures, density-painting examples, boundary-control examples, and a short demonstration will be added as the presentation package is completed.
+This repository contains the ECHO Forest Scatter v0.1 presentation, an editable Blender project file, Geometry Nodes exports, technical documentation, and a recorded demonstration.
 
-The complete editable Blender production file is **not distributed through this public repository**.
+- **[Blender project](docs/ECHO_Tree.blend)** — Editable project file for examining the procedural systems.
+- **[TreeBase node export](docs/TreeBase_export.txt)** — Procedural tree generation architecture.
+- **[Forest Scatter node export](docs/ForestScatter_export.txt)** — Terrain-aware vegetation distribution system.
+- **[Child Axis node export](docs/Child%20Axis_export.txt)** — Reusable hierarchical branch-generation component.
+- **[Technical overview](docs/technical-overview.md)** — System architecture, controls, design decisions, and known limitations.
+- **[Demo](demo/README.md)** — Recorded demonstration of the artist-facing workflow.
+
+The project remains under development. The current release demonstrates the procedural generation and scattering workflow, while performance profiling and advanced spatial placement remain future work.
 
 ## Documentation
 
